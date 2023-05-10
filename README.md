@@ -1,1 +1,1 @@
-# HOTS-Monopoly
+A project template that comes with a variety of material icons and modules for a footer, mobile menu bar, scroll-to-top button, loading screen, swipe detection and more. 
