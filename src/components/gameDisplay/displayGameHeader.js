@@ -10,3 +10,6 @@ const displayPlayerFunds = () => {
 
 }
 
+const displayPlayerProperty = () => {
+  
+}
