@@ -1,0 +1,92 @@
+RULES & SETUP:
+
+Two 6-sided dice
+
+16 Chance cards
+16 Community Chest cards
+
+28 Title Deed cards for each property
+
+Players start with $1500
+
+Players roll to begin, highest total starts
+
+Rolling doubles grants extra turn
+Rolling 3x doubles in a row puts you in jail!!
+
+3 turns in jail, 4 ways to get out: 
+  1: Roll doubles (move that distance but don't get extra turn)
+  2: Use "Get Out of Jail Free" card if you have it 
+  3: Buy "Get Out of Jail Free" card from another player then play it 
+  4: Pay $50 fine 
+
+If don't roll doubles on 3rd turn in jail, you are charged $50 automatically and move 
+however far is shown on the dice you rolled 
+
+Can still buy and sell properties or buildings and collect rent while in jail.
+
+Passing GO gives you $200
+
+Owning all properties of a group allows you to charge 2x rent
+  2x rent applies even if one of the other properties is mortgaged
+
+One may decline buying a property, in which case it goes to highest bidder 
+  (declining player can bid as well, bidding starts at any price)
+
+Houses must be spread evenly among all the properties of a group
+Houses must also be sold evenly 
+
+Hotels can be bought if you have 4 houses on EACH property of a group 
+
+Cannot sell property with any buildings on it
+Cannot mortgage a property if any other property in group has a building
+Sold buildings worth 50% the buying price
+Hotels must be sold in order they were last erected in group 
+
+Mortgaged property bought back at mortage value + 10%
+Mortgaged property may be sold at any price. 
+  New owner owes the 10% interest when buying, whether they immediately lift mortgage or not 
+  If they lift it later, they owe the 10% again 
+
+No borrowing or loaning money from player to player allowed
+
+
+
+SPEED GAME RULES:
+
+Players start with $1000 more
+3rd "speed" die added to rolls after first passing GO 
+
+Speed Die Faces: 
+  1: 1
+  2: 2
+  3: 3
+  4: Bus
+  5: Mr. Monopoly
+  6: Mr. Monopoly
+
+Rolling triples allows player to move forward to any space they choose
+Rolling two doubles then a triple means no jail; choose space to move to, then turn is over
+Speed die NOT used for jail doubles rolls
+All 3 dice used when paying utilities (picture faces worth 0)
+
+Rolling 1, 2 or 3 is added to other 2 dice 
+
+Rolling Mr. Monopoly gives you bonus move: 
+  After current turn is over (before going again [doubles] or passing to next player):
+  Move to the next unowned property; If all properties are bought:
+  Move to the next unmortgaged property owned by another player; 
+  If all opponents' properties are mortgaged, do nothing
+
+Rolling the Bus lets you choose your move: 
+  Go the distance of one of the dice, or go the combined distance
+  e.g. If roll 5 & 2, can choose to move 5 spaces, 2 spaces, or 7 spaces
+
+IDEAS:
+
+- Money = Doubloons
+- Below player name and funds: small, semi-transparent squares representing each property
+  that are filled in when player owns said property
+- Properties on board show small icons to indicate owner
+- Animated dice roll
+- Allow players to choose who starts or have game randomly select
