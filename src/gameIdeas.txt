@@ -1,0 +1,10 @@
+IDEAS:
+
+- Money = Doubloons
+- Below player name and funds: small, semi-transparent squares representing each property
+  that are filled in when player owns said property
+- Properties on board show small icons to indicate owner
+- Animated dice roll
+- Allow players to choose who starts or have game randomly select
+
+- Build forts and keeps in place of houses and hotels
