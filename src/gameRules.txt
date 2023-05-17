@@ -82,11 +82,3 @@ Rolling the Bus lets you choose your move:
   Go the distance of one of the dice, or go the combined distance
   e.g. If roll 5 & 2, can choose to move 5 spaces, 2 spaces, or 7 spaces
 
-IDEAS:
-
-- Money = Doubloons
-- Below player name and funds: small, semi-transparent squares representing each property
-  that are filled in when player owns said property
-- Properties on board show small icons to indicate owner
-- Animated dice roll
-- Allow players to choose who starts or have game randomly select
