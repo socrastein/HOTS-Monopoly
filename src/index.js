@@ -1,4 +1,5 @@
 import "./style.css";
+import HOTSBackground from "./components/HOTSBackground.jpg";
 import favicon from "../icons/logo.svg"; //TODO: Change to favicon icon you want
 
 // IMPORTING IMAGES:
@@ -16,6 +17,8 @@ import {
 } from "./components/X_navBar/scrollToTop";
 import mobileMenu from "./components/X_navBar/toggleMobileMenu";
 
+import displayStartMenu from "./components/gameDisplay/menuStart";
+
 // Loading screen overlay to allow main elements and script to load before displaying
 // If there isn't much to load, it'll be fast enough you won't see the loading screen at all
 loadingScreen.loadingScreenStart();
@@ -24,25 +27,25 @@ loadingScreen.loadingScreenStart();
 
 // EVENT LISTENERS
 // For displaying mobile menu when screen < 500px wide
-window.addEventListener("resize", onResize);
+// window.addEventListener("resize", onResize);
 document.getElementById("favicon").href = favicon;
 
 // RUN FUNCTIONS TO LOAD CONTENT:
-console.log("Testing");
 
 // For loading menu items in the upper right of site header
 
-loadNavBar();
-onResize(); // + in a hamburger menu for mobile/smaller screens
+// loadNavBar();
+// onResize(); // + in a hamburger menu for mobile/smaller screens
 
 // If you want a scroll to top button that appears in bottom right when scrolled down a bit
-loadScrollButton();
-window.onscroll = () => {
-  scrollFunction();
-};
+// loadScrollButton();
+// window.onscroll = () => {
+//   scrollFunction();
+// };
 
-console.log(mobileMenu.menuIsOpen);
+
+displayStartMenu();
 
 // Make sure this comes after the main body content is loaded so it's at the end of the document
-loadFooter();
+// loadFooter();
 loadingScreen.loadingScreenEnd();
