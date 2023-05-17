@@ -1,0 +1,3 @@
+const displayDetails = (property) => {
+  
+}
