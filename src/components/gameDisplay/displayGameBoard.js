@@ -1,3 +1,5 @@
+import './gameBoardStyle.css';
+
 const displayGameBoard = () => {
   let gameBoardMainContainer = document.createElement("div");
   gameBoardMainContainer.id = "gameBoardMainContainer";
