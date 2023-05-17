@@ -12,6 +12,7 @@ body {
   color: rgb(var(--charcoal));
   box-sizing: border-box;
   margin: 0;
+  height: 100%;
 }
 
   /*            */
@@ -122,10 +123,18 @@ to {
 /*                */
 #mainContainer {
   height: fit-content;
-  min-height: 85vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('./components/HOTSBackground.jpg'),
+  linear-gradient(
+    rgba(33,33,33,.6),
+    rgba(33,33,33,.6)
+    );    
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* Navigation Bar */
@@ -156,8 +165,7 @@ to {
 }
 
 #siteLogo {
-  height: 2.75rem;
-  width: 2.75rem;
+  border-radius: 50%;
 }
 
 #menuBar {
