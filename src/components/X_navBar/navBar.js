@@ -12,7 +12,7 @@ const loadSiteTitle = () => {
 const loadSiteName = () => {
   let siteName = document.createElement("p");
   siteName.id = "siteName";
-  siteName.textContent = "NAME OF SITE/APP"; //TODO: RENAME THIS TO SITE OR APP NAME
+  siteName.textContent = "Monopoly";
   // Clicking site name returns you to home page
   siteName.addEventListener("click", () => (location.href = "index.html")); 
   siteTitle.appendChild(siteName);
@@ -35,9 +35,9 @@ const loadMenuBar = () => {
 };
 
 let menuItems = [
-  { name: "ITEM 1", onClick: () => function1() }, //TODO: FILL IN WITH MENU ITEMS + FUNCTIONS
-  { name: "ITEM 2", onClick: () => function2() },
-  { name: "ITEM 3", onClick: () => function3() },
+  { name: "New Game", onClick: () => function1() }, //TODO: FILL IN WITH MENU ITEMS + FUNCTIONS
+  { name: "Load Game", onClick: () => function2() },
+  { name: "Options", onClick: () => function3() },
 ];
 
 const loadMenuItems = () => {

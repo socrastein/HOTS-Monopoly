@@ -2,8 +2,7 @@ const displayStartMenu = () => {
   // HOTS MONOPOLY 
   //  New Game    
   //  Load Game   
-  //  Options     
-  //  Credits    
+  //  Options      
 }
 
 const displayNewGameMenu = () => {
@@ -21,9 +20,5 @@ const displayLoadGameMenu = () => {
 }
 
 const displayGameOptions = () => {
-
-}
-
-const displayCredits = () => {
 
 }
