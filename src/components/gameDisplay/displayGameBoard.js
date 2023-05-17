@@ -7,11 +7,11 @@ const displayGameBoard = () => {
 
 }
 
-const displayPropertyOwners = () => {
+const displayPlayerPositions = () => {
 
 }
 
-const displayPlayerPositions = () => {
+const displayPropertyOwners = () => {
 
 }
 
