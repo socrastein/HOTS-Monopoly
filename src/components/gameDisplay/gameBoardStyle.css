@@ -1,0 +1,47 @@
+#gameBoardMainContainer {
+  display: grid;
+  grid-template-rows: repeat(15, 1fr);
+  grid-template-columns: repeat(15, 1fr);
+}
+
+.gameBoardCorner {
+  aspect-ratio: 1;
+  height: 6rem;
+}
+
+.gameBoardProperty {
+  aspect-ratio: .5;
+  height: 6rem;
+}
+
+.gameBoardPropertyAvatar {
+
+}
+
+.gameBoardChance {
+
+}
+
+.gameBoardChest {
+
+}
+
+.gameBoardRow {
+
+}
+
+.gameBoardColumn {
+
+}
+
+#gameBoardCenterContainer {
+
+}
+
+#gameBoardIncomeTax {
+
+}
+
+#gameBoardLuxuryTax {
+  
+}
