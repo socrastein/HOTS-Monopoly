@@ -42,6 +42,6 @@ export default {
     loadingScreenContainer.appendChild(loadingText);
     document.body.appendChild(loadingScreenContainer);
 
-    setTimeout(this.loadingScreenEnd, 1000);
+    // setTimeout(this.loadingScreenEnd, 1000);
   },
 };
