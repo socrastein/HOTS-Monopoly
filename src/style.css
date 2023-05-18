@@ -13,6 +13,12 @@ body {
   box-sizing: border-box;
   margin: 0;
   height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
   /*            */
@@ -122,8 +128,7 @@ to {
  /* MAIN CONTAINER */
 /*                */
 #mainContainer {
-  height: fit-content;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,6 +140,7 @@ to {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* Navigation Bar */
