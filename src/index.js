@@ -18,6 +18,7 @@ import {
 import mobileMenu from "./components/X_navBar/toggleMobileMenu";
 
 import displayStartMenu from "./components/gameDisplay/menuStart";
+import displayGameBoard from "./components/gameDisplay/displayGameBoard";
 
 // Loading screen overlay to allow main elements and script to load before displaying
 // If there isn't much to load, it'll be fast enough you won't see the loading screen at all
@@ -44,7 +45,9 @@ document.getElementById("favicon").href = favicon;
 // };
 
 
-displayStartMenu();
+// displayStartMenu();
+displayGameBoard();
+
 
 // Make sure this comes after the main body content is loaded so it's at the end of the document
 // loadFooter();
