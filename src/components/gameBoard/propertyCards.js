@@ -15,12 +15,12 @@ const railroadRent = (numberOwned) => {
   if (numberOwned == 4) rent = 200;
 };
 
-
 const propertyCards = [
   // Rent array index represents: 
   // 0 houses
   // 1 house ... with 5 houses representing a hotel
   {
+    space: 12,
     group: 0,
     groupName: "Utilities",
     name: "Utility 1",
@@ -30,6 +30,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 28,
     group: 0,
     groupName: "Utilities",
     name: "Utility 2",
@@ -39,6 +40,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 5,
     group: 1,
     groupName: "Railroads",
     name: "Rail 1",
@@ -48,6 +50,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 15,
     group: 1,
     groupName: "Railroads",
     name: "Rail 2",
@@ -57,6 +60,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 25,
     group: 1,
     groupName: "RailRoads",
     name: "Rail 3",
@@ -66,6 +70,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 35,
     group: 1,
     groupName: "RailRoads",
     name: "Rail 4",
@@ -75,6 +80,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 1,
     group: 2,
     groupName: "Group 1",
     name: "Property 1:1",
@@ -87,6 +93,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 3,
     group: 2,
     groupName: "Group 1",
     name: "Property 1:2",
@@ -99,6 +106,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 6,
     group: 3,
     groupName: "Group 2",
     name: "Property 2:1",
@@ -111,6 +119,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 8,
     group: 3,
     groupName: "Group 2",
     name: "Property 2:2",
@@ -123,6 +132,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 9,
     group: 3,
     groupName: "Group 2",
     name: "Property 2:3",
@@ -135,6 +145,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 11,
     group: 4,
     groupName: "Group 3",
     name: "Property 3:1",
@@ -147,6 +158,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 13,
     group: 4,
     groupName: "Group 3",
     name: "Property 3:2",
@@ -159,6 +171,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 14,
     group: 4,
     groupName: "Group 3",
     name: "Property 3:3",
@@ -171,6 +184,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 16,
     group: 5,
     groupName: "Group 4",
     name: "Property 4:1",
@@ -183,6 +197,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 18,
     group: 5,
     groupName: "Group 4",
     name: "Property 4:2",
@@ -195,6 +210,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 19,
     group: 5,
     groupName: "Group 4",
     name: "Property 4:3",
@@ -207,6 +223,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 21,
     group: 6,
     groupName: "Group 5",
     name: "Property 5:1",
@@ -219,6 +236,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 23,
     group: 6,
     groupName: "Group 5",
     name: "Property 5:2",
@@ -231,6 +249,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 24,
     group: 6,
     groupName: "Group 5",
     name: "Property 5:3",
@@ -243,6 +262,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 26,
     group: 7,
     groupName: "Group 6",
     name: "Property 6:1",
@@ -255,6 +275,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 27,
     group: 7,
     groupName: "Group 6",
     name: "Property 6:2",
@@ -267,6 +288,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 29,
     group: 7,
     groupName: "Group 6",
     name: "Property 6:3",
@@ -279,6 +301,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 31,
     group: 8,
     groupName: "Group 7",
     name: "Property 7:1",
@@ -291,6 +314,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 32,
     group: 8,
     groupName: "Group 7",
     name: "Property 7:2",
@@ -303,6 +327,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 34,
     group: 8,
     groupName: "Group 7",
     name: "Property 7:3",
@@ -315,6 +340,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 37,
     group: 9,
     groupName: "Group 8",
     name: "Property 8:1",
@@ -327,6 +353,7 @@ const propertyCards = [
     mortgage: price / 2,
   },
   {
+    space: 39,
     group: 9,
     groupName: "Group 8",
     name: "Property 8:2",
