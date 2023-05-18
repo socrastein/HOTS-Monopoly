@@ -16,10 +16,10 @@ const railroadRent = (numberOwned) => {
 };
 
 const propertyCards = [
-  // Rent array index represents: 
+  // Rent array index represents:
   // 0 houses
   // 1 house ... with 5 houses representing a hotel
-  {
+  {//0
     space: 12,
     group: 0,
     groupName: "Utilities",
@@ -27,9 +27,11 @@ const propertyCards = [
     owner: "Bank",
     price: 150,
     rent: utilityRent,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//1
     space: 28,
     group: 0,
     groupName: "Utilities",
@@ -37,9 +39,11 @@ const propertyCards = [
     owner: "Bank",
     price: 150,
     rent: utilityRent,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//2
     space: 5,
     group: 1,
     groupName: "Railroads",
@@ -47,9 +51,11 @@ const propertyCards = [
     owner: "Bank",
     price: 200,
     rent: railroadRent,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//3
     space: 15,
     group: 1,
     groupName: "Railroads",
@@ -57,9 +63,11 @@ const propertyCards = [
     owner: "Bank",
     price: 200,
     rent: railroadRent,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//4
     space: 25,
     group: 1,
     groupName: "RailRoads",
@@ -67,9 +75,11 @@ const propertyCards = [
     owner: "Bank",
     price: 200,
     rent: railroadRent,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//5
     space: 35,
     group: 1,
     groupName: "RailRoads",
@@ -77,9 +87,11 @@ const propertyCards = [
     owner: "Bank",
     price: 200,
     rent: railroadRent,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//6
     space: 1,
     group: 2,
     groupName: "Group 1",
@@ -88,11 +100,15 @@ const propertyCards = [
     price: 60,
     houses: 0,
     rentRange: [2, 10, 30, 90, 160, 250],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 50,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//7
     space: 3,
     group: 2,
     groupName: "Group 1",
@@ -101,11 +117,15 @@ const propertyCards = [
     price: 60,
     houses: 0,
     rentRange: [4, 20, 60, 180, 320, 450],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 50,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//8
     space: 6,
     group: 3,
     groupName: "Group 2",
@@ -114,11 +134,15 @@ const propertyCards = [
     price: 100,
     houses: 0,
     rentRange: [6, 30, 90, 270, 400, 550],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 50,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//9
     space: 8,
     group: 3,
     groupName: "Group 2",
@@ -127,11 +151,15 @@ const propertyCards = [
     price: 100,
     houses: 0,
     rentRange: [6, 30, 90, 270, 400, 550],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 50,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//10
     space: 9,
     group: 3,
     groupName: "Group 2",
@@ -140,11 +168,15 @@ const propertyCards = [
     price: 120,
     houses: 0,
     rentRange: [8, 40, 100, 300, 450, 600],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 50,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//11
     space: 11,
     group: 4,
     groupName: "Group 3",
@@ -153,11 +185,15 @@ const propertyCards = [
     price: 140,
     houses: 0,
     rentRange: [10, 50, 150, 450, 625, 750],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 100,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//12
     space: 13,
     group: 4,
     groupName: "Group 3",
@@ -166,11 +202,15 @@ const propertyCards = [
     price: 140,
     houses: 0,
     rentRange: [10, 50, 150, 450, 625, 750],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 100,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//13
     space: 14,
     group: 4,
     groupName: "Group 3",
@@ -179,11 +219,15 @@ const propertyCards = [
     price: 160,
     houses: 0,
     rentRange: [12, 60, 180, 500, 700, 900],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 100,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//14
     space: 16,
     group: 5,
     groupName: "Group 4",
@@ -192,11 +236,15 @@ const propertyCards = [
     price: 180,
     houses: 0,
     rentRange: [14, 70, 200, 550, 750, 950],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 100,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//15
     space: 18,
     group: 5,
     groupName: "Group 4",
@@ -205,11 +253,15 @@ const propertyCards = [
     price: 180,
     houses: 0,
     rentRange: [14, 70, 200, 550, 750, 950],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 100,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//16
     space: 19,
     group: 5,
     groupName: "Group 4",
@@ -218,11 +270,15 @@ const propertyCards = [
     price: 200,
     houses: 0,
     rentRange: [16, 80, 220, 600, 800, 1000],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 100,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//17
     space: 21,
     group: 6,
     groupName: "Group 5",
@@ -231,11 +287,15 @@ const propertyCards = [
     price: 220,
     houses: 0,
     rentRange: [18, 90, 250, 700, 875, 1050],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 150,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//18
     space: 23,
     group: 6,
     groupName: "Group 5",
@@ -244,11 +304,15 @@ const propertyCards = [
     price: 220,
     houses: 0,
     rentRange: [18, 90, 250, 700, 875, 1050],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 150,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//19
     space: 24,
     group: 6,
     groupName: "Group 5",
@@ -257,11 +321,15 @@ const propertyCards = [
     price: 240,
     houses: 0,
     rentRange: [20, 100, 300, 750, 925, 1100],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 150,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//20
     space: 26,
     group: 7,
     groupName: "Group 6",
@@ -270,11 +338,15 @@ const propertyCards = [
     price: 260,
     houses: 150,
     rentRange: [22, 110, 330, 800, 975, 1150],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 150,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//21
     space: 27,
     group: 7,
     groupName: "Group 6",
@@ -283,11 +355,15 @@ const propertyCards = [
     price: 260,
     houses: 150,
     rent: [22, 110, 330, 800, 975, 1150],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 150,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//22
     space: 29,
     group: 7,
     groupName: "Group 6",
@@ -296,11 +372,15 @@ const propertyCards = [
     price: 280,
     houses: 150,
     rentRange: [24, 120, 360, 850, 1025, 1200],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 150,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//23
     space: 31,
     group: 8,
     groupName: "Group 7",
@@ -309,11 +389,15 @@ const propertyCards = [
     price: 300,
     houses: 0,
     rentRange: [0, 0, 0, 0, 0, 0],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 200,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//24
     space: 32,
     group: 8,
     groupName: "Group 7",
@@ -322,11 +406,15 @@ const propertyCards = [
     price: 300,
     houses: 0,
     rentRange: [26, 130, 390, 900, 1100, 1275],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 200,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//25
     space: 34,
     group: 8,
     groupName: "Group 7",
@@ -335,11 +423,15 @@ const propertyCards = [
     price: 320,
     houses: 0,
     rentRange: [28, 150, 450, 1000, 1200, 1400],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 200,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//26
     space: 37,
     group: 9,
     groupName: "Group 8",
@@ -348,11 +440,15 @@ const propertyCards = [
     price: 350,
     houses: 0,
     rentRange: [35, 175, 500, 1100, 1300, 1500],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 0,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
-  {
+  {//27
     space: 39,
     group: 9,
     groupName: "Group 8",
@@ -361,9 +457,13 @@ const propertyCards = [
     price: 400,
     houses: 0,
     rentRange: [50, 200, 600, 1400, 1700, 2000],
-    rent: rentRange[houses],
+    get rent() {
+      return this.rentRange[houses];
+    },
     houseCost: 0,
-    mortgage: price / 2,
+    get mortgage() {
+      return this.price / 2;
+    },
   },
 ];
 

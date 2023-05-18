@@ -1,17 +1,21 @@
-#gameBoardMainContainer {
-  display: grid;
-  grid-template-rows: repeat(15, 1fr);
-  grid-template-columns: repeat(15, 1fr);
+* {
+  box-sizing: border-box;
 }
 
-.gameBoardCorner {
-  aspect-ratio: 1;
-  height: 6rem;
+#gameBoardMainContainer {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.gameBoardSpace {
+  border: solid 1px white;
 }
 
 .gameBoardProperty {
-  aspect-ratio: .5;
-  height: 6rem;
+  
 }
 
 .gameBoardPropertyAvatar {
@@ -27,14 +31,49 @@
 }
 
 .gameBoardRow {
-
+  display: flex;
 }
 
-.gameBoardColumn {
+.gameBoardMidRow {
+  display: flex;
+  flex-wrap: nowrap;
+}
 
+.gameBoardLeftCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.gameBoardRightCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.gameBoardRow > div {
+  height: 8rem;
+  width: 4rem;
+}
+
+.gameBoardLeftCol > div {
+  height: 4rem;
+  width: 8rem;
+}
+
+.gameBoardRightCol > div {
+  height: 4rem;  
+  width: 8rem;
+}
+
+#gameBoardParking, #gameBoardGoToJail,
+#gameBoardJail, #gameBoardGo {
+  width: 8rem;
+  height: 8rem;
+  border: solid 2px white;
 }
 
 #gameBoardCenterContainer {
+  aspect-ratio: 1;
+  width: 36rem;
 
 }
 

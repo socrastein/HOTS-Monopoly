@@ -7,3 +7,5 @@ const gameBoard = {
   availableHotels: 12,
 }
 
+export default gameBoard;
+
