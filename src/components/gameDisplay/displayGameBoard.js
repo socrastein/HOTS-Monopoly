@@ -34,10 +34,14 @@ const propertySpace = (property) => {
   const container = document.createElement("div");
   container.id = `propertySpace${property.space}`;
   container.classList.add("gameBoardSpace", "gameBoardProperty");
-  container.style.backgroundImage = propertyBanners[property.group];
+  let banner = propertyBanners[property.group];
+  container.style.backgroundImage = `url(${banner})`;
+
 
   const avatar = document.createElement("div");
   avatar.classList.add("gameBoardPropertyAvatar");
+
+  container.appendChild(avatar);
 
   return container;
 };
@@ -69,7 +73,7 @@ const displayGameBoard = () => {
   //15 x 15 grid ; 13 x 13 Gameboard with 1 square border
 
   const topRow = document.createElement("div");
-  topRow.classList.add("gameBoardRow");
+  topRow.classList.add("gameBoardTopRow");
   const midRow = document.createElement("div");
   midRow.classList.add("gameBoardMidRow");
   const leftCol = document.createElement("div");
@@ -79,7 +83,7 @@ const displayGameBoard = () => {
   const rightCol = document.createElement("div");
   rightCol.classList.add("gameBoardRightCol");
   const botRow = document.createElement("div");
-  botRow.classList.add("gameBoardRow");
+  botRow.classList.add("gameBoardBotRow");
 
   const parking = document.createElement("div");
   parking.classList.add("gameBoardCorner");

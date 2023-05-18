@@ -15,23 +15,28 @@
 }
 
 .gameBoardProperty {
-  
+  display: flex;
+  /* background-image: url(./banners/hanamura.jpg); */
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 
 .gameBoardPropertyAvatar {
-
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 1px solid white;
 }
 
 .gameBoardChance {
-
+  background-color: darkred;
 }
 
 .gameBoardChest {
+  background-color: yellow;
 
-}
-
-.gameBoardRow {
-  display: flex;
 }
 
 .gameBoardMidRow {
@@ -42,26 +47,40 @@
 .gameBoardLeftCol {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .gameBoardRightCol {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
-.gameBoardRow > div {
+.gameBoardTopRow, .gameBoardBotRow {
+  display: flex;
+}
+
+.gameBoardTopRow > div, .gameBoardBotRow > div {
+
+  justify-content: center;
   height: 8rem;
   width: 4rem;
 }
 
-.gameBoardLeftCol > div {
+.gameBoardLeftCol > div, .gameBoardRightCol > div {
   height: 4rem;
   width: 8rem;
+  align-items: center;
+}
+
+.gameBoardLeftCol > div {
+  justify-content: flex-end;
+  /* transform: rotate(90deg); */
 }
 
 .gameBoardRightCol > div {
-  height: 4rem;  
-  width: 8rem;
+  justify-content: flex-start;
+  /* transform: rotate(270deg); */
 }
 
 #gameBoardParking, #gameBoardGoToJail,
@@ -77,10 +96,138 @@
 
 }
 
-#gameBoardIncomeTax {
+#gameBoardParking {
+  background-color: white;
+}
 
+#gameBoardGoToJail {
+  background-color: grey;
+}
+
+#gameBoardJail {
+  background-color: black;
+}
+
+#gameBoardGo {
+  background-color: green;
+}
+
+#gameBoardIncomeTax {
+  background-color: aqua;
 }
 
 #gameBoardLuxuryTax {
-  
+  background-color: blue;
+}
+
+#propertySpace1 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace3 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace5 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace6 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace8 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace9 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace11 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace12 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace13 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace14 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace15 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace16 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace18 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace19 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace21 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace23 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace24 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace25 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace26 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace27 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace28 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace29 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace31 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace32 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace34 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace35 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace37 > .gameBoardPropertyAvatar {
+
+}
+
+#propertySpace39 > .gameBoardPropertyAvatar {
+
 }
