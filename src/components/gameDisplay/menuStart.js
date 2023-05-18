@@ -1,16 +1,75 @@
 import "./menuStyle.css";
 import HOTSLogo from "../HOTSLogo.jpg";
+import toggleOn from "./toggleOn.svg";
+import toggleOff from "./toggleOff.svg";
+
+import gameState from "../gameState/gameState";
+
+const filterBlue = "invert(57%) sepia(53%) saturate(5771%) hue-rotate(163deg) brightness(97%) contrast(101%)";
+const filterBlack = "invert()";
 
 const createMenuOption = (name) => {
   const container = document.createElement("div");
   container.id = `${name}Container`;
-  container.classList.add("startMenuOptionContainer");
+  container.classList.add("menuOptionContainer");
 
   const text = document.createElement("p");
   text.id = `${name}Text`;
-  text.classList.add("startMenuOptionText");
+  text.classList.add("menuOptionText");
 
   container.appendChild(text);
+
+  return container;
+};
+
+const toggleButton = (event) => {
+  const button = document.getElementById(event.target.id);
+  if (button.src == toggleOn) {
+    button.src = toggleOff;
+    button.style.filter = filterBlack;
+  } else {
+    button.src = toggleOn;
+    button.style.filter = filterBlue;
+  }
+  console.log(event);
+};
+
+const createMenuToggle = (name) => {
+  const container = document.createElement("div");
+  container.id = `${name}Container`;
+  container.classList.add("menuOptionContainer");
+
+  const text = document.createElement("p");
+  text.id = `${name}Text`;
+  text.classList.add("menuToggleText");
+
+  const toggle = document.createElement("img");
+  toggle.id = `${name}Toggle`;
+  toggle.classList.add("menuToggleImage");
+  toggle.src = toggleOff;
+  toggle.addEventListener("click", toggleButton);
+
+  container.appendChild(text);
+  container.appendChild(toggle);
+
+  return container;
+};
+
+const createMenuCycle = (name) => {
+  const container = document.createElement("div");
+  container.id = `${name}Container`;
+  container.classList.add("menuOptionContainer");
+
+  const text = document.createElement("p");
+  text.id = `${name}Text`;
+  text.classList.add("menuToggleText");
+
+  const option = document.createElement("p");
+  option.id = `${name}Option`;
+  option.classList.add("menuCycleOption");
+
+  container.appendChild(text);
+  container.appendChild(option);
 
   return container;
 };
@@ -21,13 +80,14 @@ const displayStartMenu = () => {
   //  Load Game
   //  Options
   const mainContainer = document.getElementById("mainContainer");
-  mainContainer.innerHTML = '';
+  mainContainer.innerHTML = "";
 
   const menuContainer = document.createElement("div");
   menuContainer.id = "menuContainer";
   mainContainer.appendChild(menuContainer);
 
   const menuTitle = createMenuOption("startMenuTitle");
+  menuTitle.classList.add("menuTitleContainer", "menuTitle");
   const menuNew = createMenuOption("startMenuNew");
   menuNew.addEventListener("click", displayNewGameMenu);
   const menuLoad = createMenuOption("startMenuLoad");
@@ -41,22 +101,15 @@ const displayStartMenu = () => {
   menuContainer.appendChild(menuOptions);
 
   const titleText = document.getElementById("startMenuTitleText");
-  const titleImage = document.getElementById("startMenuTitleImage");
+  titleText.classList.add("menuTitle");
   const newText = document.getElementById("startMenuNewText");
-  const newImage = document.getElementById("startMenuNewImage");
   const loadText = document.getElementById("startMenuLoadText");
-  const loadImage = document.getElementById("startMenuLoadImage");
   const optionsText = document.getElementById("startMenuOptionsText");
-  const optionsImage = document.getElementById("startMenuOptionsImage");
 
   titleText.textContent = "MONOPOLY";
-  // titleImage.src =
   newText.textContent = "New Game";
-  // // newImage.src =
   loadText.textContent = "Load Game";
-  // // loadImage.src =
   optionsText.textContent = "Options";
-  // // optionsImage.src =
 };
 
 const displayNewGameMenu = () => {
@@ -70,17 +123,56 @@ const displayNewGameMenu = () => {
   //  Auction Unsold Property : Yes, No
 
   const mainContainer = document.getElementById("mainContainer");
-  mainContainer.innerHTML = '';
+  mainContainer.innerHTML = "";
 
   const menuContainer = document.createElement("div");
   menuContainer.id = "menuContainer";
   mainContainer.appendChild(menuContainer);
 
   const menuTitle = createMenuOption("newGameTitle");
-  const menuPlayers = createMenuOption("newGamePlayers");
-  const menuSpeed = createMenuOption("newGameSpeed");
-  const menuParking = createMenuOption("newGameParking");
+  menuTitle.classList.add("menuTitleContainer", "menuTitle");
+  menuTitle.textContent = "New Game";
 
+  const menuPlayers = createMenuCycle("newGamePlayers");
+  const menuSpeed = createMenuToggle("newGameSpeed");
+  const menuParking = createMenuToggle("newGameParking");
+  const menuHousing = createMenuToggle("newGameHousing");
+  const menuAuction = createMenuToggle("newGameAuction");
+  const menuStart = createMenuOption("newGameStart");
+
+  menuContainer.appendChild(menuTitle);
+  menuContainer.appendChild(menuPlayers);
+  menuContainer.appendChild(menuSpeed);
+  menuContainer.appendChild(menuParking);
+  menuContainer.appendChild(menuHousing);
+  menuContainer.appendChild(menuAuction);
+  menuContainer.appendChild(menuStart);
+
+  // Add text for all the buttons in the menu
+  const playersText = document.getElementById("newGamePlayersText");
+  playersText.textContent = "Players";
+  const playersOption = document.getElementById("newGamePlayersOption");
+  playersOption.textContent = gameState.numberOfPlayers;
+  const speedText = document.getElementById("newGameSpeedText");
+  speedText.textContent = "Game Speed";
+  const parkingText = document.getElementById("newGameParkingText");
+  parkingText.textContent = "Free Parking Bonus";
+  const housingText = document.getElementById("newGameHousingText");
+  housingText.textContent = "Limited Structures";
+  const auctionText = document.getElementById("newGameAuctionText");
+  auctionText.textContent = "Auction Property";
+  const startText = document.getElementById("newGameStartText");
+  startText.textContent = "START GAME";
+
+  // Add click events to each button for changing gameState values
+  menuPlayers.addEventListener("click", () => {
+    console.log(gameState.numberOfPlayers);
+    gameState.numberOfPlayers ++;
+    if(gameState.numberOfPlayers > 4){
+      gameState.numberOfPlayers = 1;
+    }
+    playersOption.textContent = gameState.numberOfPlayers;
+  });
 };
 
 const displayLoadGameMenu = () => {
@@ -95,7 +187,6 @@ const displayLoadGameMenu = () => {
 
 const displayGameOptions = () => {
   console.log("Game Options");
-
 };
 
 export default displayStartMenu;

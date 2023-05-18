@@ -17,11 +17,13 @@ p {
   background-color: rgba(50,50,200,.6)
 }
 
-.startMenuOptionContainer {
+.menuOptionContainer {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+
   width: 80%;
   height: 4rem;
   background-color: rgba(33,33,33,.9);
@@ -37,12 +39,12 @@ p {
 
 }
 
-.startMenuOptionContainer:hover:not(#startMenuTitleContainer){
+.menuOptionContainer:hover:not(.menuTitle){
   transform: scale(1.05);
   cursor: pointer;
 }
 
-#startMenuTitleContainer {
+.menuTitleContainer {
   height: 5rem;
   background-image: linear-gradient(
     0deg,
@@ -51,18 +53,43 @@ p {
     );
 }
 
-#startMenuTitleText {
+.menuOptionText {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  width: 90%;
+  text-align: center;
+}
+
+.menuToggleText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  width: 90%;
+  text-align: right;
+}
+
+.menuCycleOption {
+  width: 3rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: yellow;
+}
+
+.menuTitle {
   font-size: 3rem;
   font-weight: bold;
   color: white;
 }
 
-#startMenuTitleImage {
+.menuToggleImage {
+  filter: invert();
+  height: 3rem;
+  width: 3rem;
+}
+
+.menuCycleOption {
 
 }
 
-.startMenuOptionText {
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-}
