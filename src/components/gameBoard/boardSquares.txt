@@ -1,0 +1,46 @@
+PURPLE: 
+Haunted Mines
+  Erik the Red
+  Murky
+
+LIGHT BLUE:
+Hanamura Temple 
+  Hanzo 
+  Genji
+  D.Va
+
+MAGENTA:
+Cursed Hollow
+  Sylvanas 
+  Arthas 
+  Illidan
+
+ORANGE:
+Volskaya Foundry
+  Tracer
+  Mei 
+  Zarya
+
+RED:
+Dragon Shire
+  Chromie
+  Alexstraza
+  Deathwing
+
+YELLOW:
+Warhead Junction
+  Raynor
+  Nova
+  Sgt. Hammer
+
+GREEN: 
+Infernal Shrines
+  Imperius
+  Valla
+  The Butcher
+  
+BLUE: 
+Towers of Doom:
+  Raven Lord
+  Grave Keeper
+
