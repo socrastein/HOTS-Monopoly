@@ -3,15 +3,22 @@
 }
 
 #gameBoardMainContainer {
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 0 2rem lightskyblue, inset 0 0 3rem 2px lightskyblue;
+  border-radius: 2rem;
 }
 
-
-
 .gameBoardSpace {
-  border: solid 1px white;
+  display: flex;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0.2rem;
+  box-shadow: 0 0 .5rem rgba(0, 0, 100, 0.75);
+  border-radius: .75rem;
+  border: ridge 3px rgba(0, 0, 0, 1)
 }
 
 .gameBoardProperty {
@@ -22,41 +29,34 @@
   justify-content: flex-end;
 }
 
-.gameBoardProperty, .gameBoardChance, .gameBoardChest {
-  display: flex;
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  gap: .5rem;
-  padding: .2rem;
+.gameBoardProperty,
+.gameBoardChance,
+.gameBoardChest {
+  
 }
 
 .gameBoardPropertyBanner {
-
 }
 
 .gameBoardPropertyTag {
-  padding: .25rem;
-  background-color: rgba(50,50,50,.75);
-  color: rgba(255,255,255,1);
+  padding: 0.25rem;
+  background-color: rgba(50, 50, 50, 0.75);
+  color: rgba(255, 255, 255, 1);
   font-weight: bold;
   border-radius: .5rem;
 }
 
 .gameBoardPropertyAvatar {
-  height: 3rem;
-  width: 3rem;
+  height: 3.5rem;
+  width: 3.5rem;
   border-radius: 50%;
-  border: 2px solid rgba(245,245,245,.6);
+  border: 2px solid rgba(245, 245, 245, 0.6);
   background-position: center;
   background-size: cover;
 }
 
-.gameBoardChance  {
-  background-image: linear-gradient(
-    rgba(0,0,0,1),
-    rgba(180,245,100,.7)
-  )
+.gameBoardChance {
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(180, 245, 100, 0.7));
 }
 
 .gameBoardChance > .gameBoardPropertyAvatar {
@@ -64,10 +64,7 @@
 }
 
 .gameBoardChest {
-  background-image: linear-gradient(
-    rgba(0,0,0,1),
-    rgba(200,150,50,1)
-  )
+  background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(200, 150, 50, 1));
 }
 
 .gameBoardChest > .gameBoardPropertyAvatar {
@@ -76,6 +73,7 @@
 
 .gameBoardMidRow {
   display: flex;
+  justify-content: space-between;
   flex-wrap: nowrap;
 }
 
@@ -95,7 +93,10 @@
   position: relative;
 }
 
-.gameBoardTopRow, .gameBoardBotRow {
+.gameBoardTopRow,
+.gameBoardBotRow,
+.gameBoardLeftCol,
+.gameBoardRightCol {
   display: flex;
 }
 
@@ -105,14 +106,16 @@
 .gameBoardBotRow > div {
 }
 
-.gameBoardTopRow > div, .gameBoardBotRow > div {
+.gameBoardTopRow > div,
+.gameBoardBotRow > div {
   flex-direction: column;
   align-items: center;
   height: 8rem;
   width: 4rem;
 }
 
-.gameBoardLeftCol > div, .gameBoardRightCol > div {
+.gameBoardLeftCol > div,
+.gameBoardRightCol > div {
   height: 4rem;
   width: 8rem;
   align-items: center;
@@ -134,36 +137,35 @@
 
 .cornerTag {
   color: white;
-  padding: .25rem;
+  padding: 0.25rem;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
-  background-color: rgba(33,33,33,.75);
+  background-color: rgba(33, 33, 33, 0.75);
   border-radius: .5rem;
 }
 
-#gameBoardParking, #gameBoardGoToJail,
-#gameBoardJail, #gameBoardGo {
+#gameBoardParking,
+#gameBoardGoToJail,
+#gameBoardJail,
+#gameBoardGo {
   width: 8rem;
   height: 8rem;
-  border: solid 2px white;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   justify-content: space-between;
+  border-radius: .75rem;
 }
 
 #gameBoardCenterContainer {
   aspect-ratio: 1;
-  width: 36rem;
 }
-
 
 #gameBoardParking {
   background-image: url(./banners/keep.png);
   background-position: center top;
-  border-radius: 1rem 0 0 0;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
@@ -172,13 +174,11 @@
 #gameBoardGoToJail {
   background-image: url(./banners/garrosh.jpg);
   background-position: left;
-  border-radius: 0 1rem 0 0;
   align-items: flex-start;
 }
 
 #gameBoardJail {
   background-image: url(./banners/butcher.jpg);
-  border-radius: 0 0 0 1rem;
   align-items: flex-end;
   background-position: -4rem 0rem;
   background-size: 165%;
@@ -186,7 +186,6 @@
 
 #gameBoardGo {
   background-image: url(../HOTSLogo.jpg);
-  border-radius: 0 0 1rem 0;
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;

@@ -3,6 +3,8 @@ import gameState from "../gameState/gameState";
 import gameBoard from "../gameBoard/gameBoard";
 import propertyCards from "../gameBoard/propertyCards";
 
+import displayDetails from "./displaySpaceDetails";
+
 import bannerBruiser from "./banners/bruiser.jpg";
 import bannerBoss from "./banners/boss.png";
 import bannerCursed from "./banners/cursed.jpg";
@@ -56,6 +58,7 @@ const propertySpace = (property, flip = false) => {
     container.appendChild(tag)
   }
 
+  container.addEventListener("click", displayDetails);
   return container;
 };
 
