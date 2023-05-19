@@ -15,28 +15,63 @@
 }
 
 .gameBoardProperty {
+  justify-content: space-between;
+}
+
+.gameBoardTopRow > .gameBoardChance {
+  justify-content: flex-end;
+}
+
+.gameBoardProperty, .gameBoardChance, .gameBoardChest {
   display: flex;
-  /* background-image: url(./banners/hanamura.jpg); */
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
+  gap: .5rem;
+  padding: .2rem;
+}
 
+.gameBoardPropertyBanner {
+
+}
+
+.gameBoardPropertyTag {
+  padding: .25rem;
+  background-color: rgba(50,50,50,.75);
+  color: rgba(255,255,255,1);
+  font-weight: bold;
+  border-radius: .5rem;
 }
 
 .gameBoardPropertyAvatar {
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 2px solid rgba(245,245,245,.6);
+  background-position: center;
+  background-size: cover;
 }
 
-.gameBoardChance {
-  background-color: darkred;
+.gameBoardChance  {
+  background-image: linear-gradient(
+    rgba(0,0,0,1),
+    rgba(180,245,100,.7)
+  )
+}
+
+.gameBoardChance > .gameBoardPropertyAvatar {
+  background-image: url(./portraits/verdant.jpeg);
 }
 
 .gameBoardChest {
-  background-color: yellow;
+  background-image: linear-gradient(
+    rgba(0,0,0,1),
+    rgba(200,150,50,1)
+  )
+}
 
+.gameBoardChest > .gameBoardPropertyAvatar {
+  background-image: url(./portraits/neosteel.png);
 }
 
 .gameBoardMidRow {
@@ -50,6 +85,10 @@
   position: relative;
 }
 
+.gameBoardLeftCol > .gameBoardChest {
+  justify-content: flex-end;
+}
+
 .gameBoardRightCol {
   display: flex;
   flex-direction: column;
@@ -60,9 +99,15 @@
   display: flex;
 }
 
-.gameBoardTopRow > div, .gameBoardBotRow > div {
+.gameBoardTopRow > div {
+}
 
-  justify-content: center;
+.gameBoardBotRow > div {
+}
+
+.gameBoardTopRow > div, .gameBoardBotRow > div {
+  flex-direction: column;
+  align-items: center;
   height: 8rem;
   width: 4rem;
 }
@@ -74,13 +119,28 @@
 }
 
 .gameBoardLeftCol > div {
-  justify-content: flex-end;
   /* transform: rotate(90deg); */
 }
 
 .gameBoardRightCol > div {
-  justify-content: flex-start;
   /* transform: rotate(270deg); */
+}
+
+.gameBoardCorner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cornerTag {
+  color: white;
+  padding: .25rem;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  background-color: rgba(33,33,33,.75);
+  border-radius: .5rem;
 }
 
 #gameBoardParking, #gameBoardGoToJail,
@@ -88,146 +148,166 @@
   width: 8rem;
   height: 8rem;
   border: solid 2px white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  justify-content: space-between;
 }
 
 #gameBoardCenterContainer {
   aspect-ratio: 1;
   width: 36rem;
-
 }
 
+
 #gameBoardParking {
-  background-color: white;
+  background-image: url(./banners/keep.png);
+  background-position: center top;
+  border-radius: 1rem 0 0 0;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 #gameBoardGoToJail {
-  background-color: grey;
+  background-image: url(./banners/garrosh.jpg);
+  background-position: left;
+  border-radius: 0 1rem 0 0;
+  align-items: flex-start;
 }
 
 #gameBoardJail {
-  background-color: black;
+  background-image: url(./banners/butcher.jpg);
+  border-radius: 0 0 0 1rem;
+  align-items: flex-end;
+  background-position: -4rem 0rem;
+  background-size: 165%;
 }
 
 #gameBoardGo {
-  background-color: green;
+  background-image: url(../HOTSLogo.jpg);
+  border-radius: 0 0 1rem 0;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 #gameBoardIncomeTax {
-  background-color: aqua;
+  background-image: url(./banners/malthael.jpg);
+  background-position: center top;
+  background-size: 400%;
 }
 
 #gameBoardLuxuryTax {
-  background-color: blue;
+  background-image: url(./banners/stitches.jpg);
+  background-position: 20% top;
+  background-size: 150%;
 }
 
 #propertySpace1 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/erik.png);
 }
 
 #propertySpace3 > .gameBoardPropertyAvatar {
-
-}
-
-#propertySpace5 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/murky.png);
 }
 
 #propertySpace6 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/hanzo.png);
 }
 
 #propertySpace8 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/genji.png);
 }
 
 #propertySpace9 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/dva.png);
 }
 
 #propertySpace11 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/sylvanas.png);
 }
 
 #propertySpace12 > .gameBoardPropertyAvatar {
-
+  /* background-image: url(./portraits/); */
 }
 
 #propertySpace13 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/arthas.png);
 }
 
 #propertySpace14 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/illidan.png);
 }
 
 #propertySpace15 > .gameBoardPropertyAvatar {
-
+  /* background-image: url(./portraits/); */
 }
 
 #propertySpace16 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/tracer.png);
 }
 
 #propertySpace18 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/mei.png);
 }
 
 #propertySpace19 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/zarya.png);
 }
 
 #propertySpace21 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/chromie.png);
 }
 
 #propertySpace23 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/alexstraza.png);
 }
 
 #propertySpace24 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/deathwing.png);
 }
 
 #propertySpace25 > .gameBoardPropertyAvatar {
-
+  /* background-image: url(./portraits/); */
 }
 
 #propertySpace26 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/raynor.png);
 }
 
 #propertySpace27 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/nova.png);
 }
 
 #propertySpace28 > .gameBoardPropertyAvatar {
-
+  /* background-image: url(./portraits/); */
 }
 
 #propertySpace29 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/hammer.png);
 }
 
 #propertySpace31 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/imperius.png);
 }
 
 #propertySpace32 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/valla.png);
 }
 
 #propertySpace34 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/diablo.png);
 }
 
 #propertySpace35 > .gameBoardPropertyAvatar {
-
+  /* background-image: url(./portraits/); */
 }
 
 #propertySpace37 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/orphea.png);
 }
 
 #propertySpace39 > .gameBoardPropertyAvatar {
-
+  background-image: url(./portraits/liming.png);
 }

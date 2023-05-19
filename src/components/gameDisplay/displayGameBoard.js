@@ -17,44 +17,91 @@ import bannerWarhead from "./banners/warhead.jpg";
 const bossBanners = [];
 const bruiserBanners = [];
 
-const propertyBanners = [
-  bannerBruiser,
-  bannerBoss,
-  bannerMines,
-  bannerHanamura,
-  bannerCursed,
-  bannerVolskaya,
-  bannerDragon,
-  bannerWarhead,
-  bannerInfernal,
-  bannerTowers,
+const propertyColors = [
+  'rgba(0,0,0,.25)',          //bruiser
+  'rgba(0,0,0,.25)',          //boss
+  'rgba(50,5,0,.75)',         //haunted mines
+  'rgba(255,150,255,.75)',    //hanamura
+  'rgba( 0, 75, 75,.75)',     //towers of doom
+  'rgba( 50, 155, 255,.75)',       //volskaya
+  'rgba( 200, 0, 0,.75)',     //
+  'rgba( 200, 150, 0,.75)',   //
+  'rgba( 255, 125, 0,.75)',   //
+  'rgba(100, 0, 165,.75)'     //
 ];
 
-const propertySpace = (property) => {
+const propertySpace = (property, flip = false) => {
   const container = document.createElement("div");
   container.id = `propertySpace${property.space}`;
   container.classList.add("gameBoardSpace", "gameBoardProperty");
-  let banner = propertyBanners[property.group];
-  container.style.backgroundImage = `url(${banner})`;
+  let color = propertyColors[property.group];
+  container.style.backgroundImage = `linear-gradient(
+    rgba(0,0,0,1),
+    ${color}
+  )`;
 
 
   const avatar = document.createElement("div");
   avatar.classList.add("gameBoardPropertyAvatar");
 
-  container.appendChild(avatar);
+  const tag = document.createElement("div");
+  tag.classList.add("gameBoardPropertyTag");
+  tag.textContent = `❤︎ ${property.price}`;
+
+  if(flip){
+    container.appendChild(tag)
+    container.appendChild(avatar)
+  } else {
+    container.appendChild(avatar);
+    container.appendChild(tag)
+  }
 
   return container;
 };
 
-const chanceSpace = () => {
+const chanceSpace = (flip = false) => {
   const container = document.createElement("div");
   container.classList.add("gameBoardSpace", "gameBoardChance");
+
+  const avatar = document.createElement("div");
+  avatar.classList.add("gameBoardPropertyAvatar");
+  container.appendChild(avatar);
+
+  const tag = document.createElement("div");
+  tag.classList.add("gameBoardPropertyTag");
+  tag.textContent = `Magic`;
+
+  if(flip){
+    container.appendChild(tag)
+    container.appendChild(avatar)
+  } else {
+    container.appendChild(avatar);
+    container.appendChild(tag)
+  }
+
   return container;
 };
 
-const chestSpace = () => {
+const chestSpace = (flip = false) => {
   const container = document.createElement("div");
   container.classList.add("gameBoardSpace", "gameBoardChest");
+
+  const avatar = document.createElement("div");
+  avatar.classList.add("gameBoardPropertyAvatar");
+  container.appendChild(avatar);
+
+  const tag = document.createElement("div");
+  tag.classList.add("gameBoardPropertyTag");
+  tag.textContent = `Tech`;
+
+  if(flip){
+    container.appendChild(tag)
+    container.appendChild(avatar)
+  } else {
+    container.appendChild(avatar);
+    container.appendChild(tag)
+  }
+
   return container;
 };
 
@@ -89,17 +136,57 @@ const displayGameBoard = () => {
   parking.classList.add("gameBoardCorner");
   parking.id = "gameBoardParking";
 
+  const parkingTag1 = document.createElement("div");
+  parkingTag1.textContent = "SAFE";
+  parkingTag1.classList.add("cornerTag");
+  parking.appendChild(parkingTag1)
+
+  const parkingTag2 = document.createElement("div");
+  parkingTag2.textContent = "KEEP";
+  parkingTag2.classList.add("cornerTag");
+  parking.appendChild(parkingTag2)
+  
   const goToJail = document.createElement("div");
   goToJail.classList.add("gameBoardCorner");
   goToJail.id = "gameBoardGoToJail";
+
+  const goToJailTag1 = document.createElement("div");
+  goToJailTag1.textContent = "GO TO";
+  goToJailTag1.classList.add("cornerTag");
+  goToJail.appendChild(goToJailTag1);
+
+  const goToJailTag2 = document.createElement("div");
+  goToJailTag2.textContent = "SLAUGHTER";
+  goToJailTag2.classList.add("cornerTag");
+  goToJail.appendChild(goToJailTag2);
 
   const go = document.createElement("div");
   go.classList.add("gameBoardCorner");
   go.id = "gameBoardGo";
 
+  const goTag1 = document.createElement("div");
+  goTag1.textContent = "HOME";
+  goTag1.classList.add("cornerTag");
+  go.appendChild(goTag1)
+
+  const goTag2 = document.createElement("div");
+  goTag2.textContent = "BASE";
+  goTag2.classList.add("cornerTag");
+  go.appendChild(goTag2)
+
   const jail = document.createElement("div");
   jail.classList.add("gameBoardCorner");
   jail.id = "gameBoardJail";
+
+  const jailTag1 = document.createElement("div");
+  jailTag1.textContent = "SLAUGHTER"
+  jailTag1.classList.add("cornerTag");
+  jail.appendChild(jailTag1);
+
+  const jailTag2 = document.createElement("div");
+  jailTag2.textContent = "HOUSE"
+  jailTag2.classList.add("cornerTag");
+  jail.appendChild(jailTag2);
 
   const incomeTax = document.createElement("div");
   incomeTax.classList.add("gameBoardSpace");
@@ -117,26 +204,26 @@ const displayGameBoard = () => {
   gameBoardMainContainer.appendChild(botRow);
 
   topRow.appendChild(parking);
-  topRow.appendChild(propertySpace(propertyCards[17]));
-  topRow.appendChild(chanceSpace());
-  topRow.appendChild(propertySpace(propertyCards[18]));
-  topRow.appendChild(propertySpace(propertyCards[19]));
-  topRow.appendChild(propertySpace(propertyCards[4]));
-  topRow.appendChild(propertySpace(propertyCards[20]));
-  topRow.appendChild(propertySpace(propertyCards[21]));
-  topRow.appendChild(propertySpace(propertyCards[22]));
-  topRow.appendChild(propertySpace(propertyCards[1]));
+  topRow.appendChild(propertySpace(propertyCards[17], true));
+  topRow.appendChild(chanceSpace(true));
+  topRow.appendChild(propertySpace(propertyCards[18], true));
+  topRow.appendChild(propertySpace(propertyCards[19], true));
+  topRow.appendChild(propertySpace(propertyCards[4], true));
+  topRow.appendChild(propertySpace(propertyCards[20], true));
+  topRow.appendChild(propertySpace(propertyCards[21], true));
+  topRow.appendChild(propertySpace(propertyCards[1], true));
+  topRow.appendChild(propertySpace(propertyCards[22], true));
   topRow.appendChild(goToJail);
 
-  leftCol.appendChild(propertySpace(propertyCards[16]));
-  leftCol.appendChild(propertySpace(propertyCards[15]));
-  leftCol.appendChild(chestSpace());
-  leftCol.appendChild(propertySpace(propertyCards[14]));
-  leftCol.appendChild(propertySpace(propertyCards[3]));
-  leftCol.appendChild(propertySpace(propertyCards[13]));
-  leftCol.appendChild(propertySpace(propertyCards[12]));
-  leftCol.appendChild(propertySpace(propertyCards[0]));
-  leftCol.appendChild(propertySpace(propertyCards[11]));
+  leftCol.appendChild(propertySpace(propertyCards[16], true));
+  leftCol.appendChild(propertySpace(propertyCards[15], true));
+  leftCol.appendChild(chestSpace(true));
+  leftCol.appendChild(propertySpace(propertyCards[14], true));
+  leftCol.appendChild(propertySpace(propertyCards[3], true));
+  leftCol.appendChild(propertySpace(propertyCards[13], true));
+  leftCol.appendChild(propertySpace(propertyCards[12], true));
+  leftCol.appendChild(propertySpace(propertyCards[0], true));
+  leftCol.appendChild(propertySpace(propertyCards[11], true));
 
   rightCol.appendChild(propertySpace(propertyCards[23]));
   rightCol.appendChild(propertySpace(propertyCards[24]));

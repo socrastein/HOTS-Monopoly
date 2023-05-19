@@ -1,7 +1,7 @@
 PURPLE: 
 Haunted Mines
-  Murky
   Erik the Red
+  Murky
 
 LIGHT BLUE:
 Hanamura Temple 
@@ -24,7 +24,7 @@ Volskaya Foundry
 RED:
 Dragon Shire
   Chromie
-  Alextraza
+  Alexstraza
   Deathwing
 
 YELLOW:
