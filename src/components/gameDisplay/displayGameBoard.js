@@ -5,31 +5,17 @@ import propertyCards from "../gameBoard/propertyCards";
 
 import displayDetails from "./displaySpaceDetails";
 
-import bannerBruiser from "./banners/bruiser.jpg";
-import bannerBoss from "./banners/boss.png";
-import bannerCursed from "./banners/cursed.jpg";
-import bannerDragon from "./banners/dragon.jpg";
-import bannerHanamura from "./banners/hanamura.jpg";
-import bannerInfernal from "./banners/infernal.jpg";
-import bannerMines from "./banners/mines.jpg";
-import bannerTowers from "./banners/towers.jpg";
-import bannerVolskaya from "./banners/volskaya.jpg";
-import bannerWarhead from "./banners/warhead.jpg";
-
-const bossBanners = [];
-const bruiserBanners = [];
-
 const propertyColors = [
-  'rgba(0,0,0,.25)',          //bruiser
-  'rgba(0,0,0,.25)',          //boss
-  'rgba(50,5,0,.75)',         //haunted mines
-  'rgba(255,150,255,.75)',    //hanamura
-  'rgba( 0, 75, 75,.75)',     //towers of doom
-  'rgba( 50, 155, 255,.75)',       //volskaya
-  'rgba( 200, 0, 0,.75)',     //
-  'rgba( 200, 150, 0,.75)',   //
-  'rgba( 255, 125, 0,.75)',   //
-  'rgba(100, 0, 165,.75)'     //
+  "rgba(0,0,0,.25)", //bruiser
+  "rgba(0,0,0,.25)", //boss
+  "rgba(50,5,0,.75)", //haunted mines
+  "rgba(255,150,255,.75)", //hanamura
+  "rgba( 0, 75, 75,.75)", //towers of doom
+  "rgba( 50, 155, 255,.75)", //volskaya
+  "rgba( 200, 0, 0,.75)", //
+  "rgba( 200, 150, 0,.75)", //
+  "rgba( 255, 125, 0,.75)", //
+  "rgba(100, 0, 165,.75)", //
 ];
 
 const propertySpace = (property, flip = false) => {
@@ -42,7 +28,6 @@ const propertySpace = (property, flip = false) => {
     ${color}
   )`;
 
-
   const avatar = document.createElement("div");
   avatar.classList.add("gameBoardPropertyAvatar");
 
@@ -50,15 +35,18 @@ const propertySpace = (property, flip = false) => {
   tag.classList.add("gameBoardPropertyTag");
   tag.textContent = `❤︎ ${property.price}`;
 
-  if(flip){
-    container.appendChild(tag)
-    container.appendChild(avatar)
+  if (flip) {
+    container.appendChild(tag);
+    container.appendChild(avatar);
   } else {
     container.appendChild(avatar);
-    container.appendChild(tag)
+    container.appendChild(tag);
   }
 
-  container.addEventListener("click", displayDetails);
+  container.addEventListener("click", (event) => {
+    let id = event.target.id;
+    displayDetails(id);
+  });
   return container;
 };
 
@@ -74,14 +62,17 @@ const chanceSpace = (flip = false) => {
   tag.classList.add("gameBoardPropertyTag");
   tag.textContent = `Magic`;
 
-  if(flip){
-    container.appendChild(tag)
-    container.appendChild(avatar)
+  if (flip) {
+    container.appendChild(tag);
+    container.appendChild(avatar);
   } else {
     container.appendChild(avatar);
-    container.appendChild(tag)
+    container.appendChild(tag);
   }
-
+  container.addEventListener("click", (event) => {
+    let id = event.target.id;
+    displayDetails(id);
+  });
   return container;
 };
 
@@ -97,14 +88,17 @@ const chestSpace = (flip = false) => {
   tag.classList.add("gameBoardPropertyTag");
   tag.textContent = `Tech`;
 
-  if(flip){
-    container.appendChild(tag)
-    container.appendChild(avatar)
+  if (flip) {
+    container.appendChild(tag);
+    container.appendChild(avatar);
   } else {
     container.appendChild(avatar);
-    container.appendChild(tag)
+    container.appendChild(tag);
   }
-
+  container.addEventListener("click", (event) => {
+    let id = event.target.id;
+    displayDetails(id);
+  });
   return container;
 };
 
@@ -114,7 +108,6 @@ const propertySpaces = [
   12, 28, 5, 15, 25, 35, 1, 3, 6, 8, 9, 11, 13, 14, 16, 18, 19, 21, 23, 24, 26,
   27, 29, 31, 32, 34, 37, 39,
 ];
-
 
 const displayGameBoard = () => {
   const mainContainer = document.getElementById("mainContainer");
@@ -138,20 +131,28 @@ const displayGameBoard = () => {
   const parking = document.createElement("div");
   parking.classList.add("gameBoardCorner");
   parking.id = "gameBoardParking";
+  parking.addEventListener("click", (event) => {
+    let id = event.target.id;
+    displayDetails(id);
+  });
 
   const parkingTag1 = document.createElement("div");
   parkingTag1.textContent = "SAFE";
   parkingTag1.classList.add("cornerTag");
-  parking.appendChild(parkingTag1)
+  parking.appendChild(parkingTag1);
 
   const parkingTag2 = document.createElement("div");
   parkingTag2.textContent = "KEEP";
   parkingTag2.classList.add("cornerTag");
-  parking.appendChild(parkingTag2)
-  
+  parking.appendChild(parkingTag2);
+
   const goToJail = document.createElement("div");
   goToJail.classList.add("gameBoardCorner");
   goToJail.id = "gameBoardGoToJail";
+  goToJail.addEventListener("click", (event) => {
+    let id = event.target.id;
+    displayDetails(id);
+  });
 
   const goToJailTag1 = document.createElement("div");
   goToJailTag1.textContent = "GO TO";
@@ -166,38 +167,54 @@ const displayGameBoard = () => {
   const go = document.createElement("div");
   go.classList.add("gameBoardCorner");
   go.id = "gameBoardGo";
+  go.addEventListener("click", (event) => {
+    let id = event.target.id;
+    displayDetails(id);
+  });
 
   const goTag1 = document.createElement("div");
   goTag1.textContent = "HOME";
   goTag1.classList.add("cornerTag");
-  go.appendChild(goTag1)
+  go.appendChild(goTag1);
 
   const goTag2 = document.createElement("div");
   goTag2.textContent = "BASE";
   goTag2.classList.add("cornerTag");
-  go.appendChild(goTag2)
+  go.appendChild(goTag2);
 
   const jail = document.createElement("div");
   jail.classList.add("gameBoardCorner");
   jail.id = "gameBoardJail";
+  jail.addEventListener("click", (event) => {
+    let id = event.target.id;
+    displayDetails(id);
+  });
 
   const jailTag1 = document.createElement("div");
-  jailTag1.textContent = "SLAUGHTER"
+  jailTag1.textContent = "SLAUGHTER";
   jailTag1.classList.add("cornerTag");
   jail.appendChild(jailTag1);
 
   const jailTag2 = document.createElement("div");
-  jailTag2.textContent = "HOUSE"
+  jailTag2.textContent = "HOUSE";
   jailTag2.classList.add("cornerTag");
   jail.appendChild(jailTag2);
 
   const incomeTax = document.createElement("div");
   incomeTax.classList.add("gameBoardSpace");
   incomeTax.id = "gameBoardIncomeTax";
+  incomeTax.addEventListener("click", (event) => {
+    let id = event.target.id;
+    displayDetails(id);
+  });
 
   const luxuryTax = document.createElement("div");
   luxuryTax.classList.add("gameBoardSpace");
   luxuryTax.id = "gameBoardLuxuryTax";
+  luxuryTax.addEventListener("click", (event) => {
+    let id = event.target.id;
+    displayDetails(id);
+  });
 
   gameBoardMainContainer.appendChild(topRow);
   gameBoardMainContainer.appendChild(midRow);
@@ -209,6 +226,7 @@ const displayGameBoard = () => {
   topRow.appendChild(parking);
   topRow.appendChild(propertySpace(propertyCards[17], true));
   topRow.appendChild(chanceSpace(true));
+  topRow.lastChild.id = "chanceSpace2";
   topRow.appendChild(propertySpace(propertyCards[18], true));
   topRow.appendChild(propertySpace(propertyCards[19], true));
   topRow.appendChild(propertySpace(propertyCards[4], true));
@@ -221,6 +239,7 @@ const displayGameBoard = () => {
   leftCol.appendChild(propertySpace(propertyCards[16], true));
   leftCol.appendChild(propertySpace(propertyCards[15], true));
   leftCol.appendChild(chestSpace(true));
+  leftCol.lastChild.id = "chestSpace2";
   leftCol.appendChild(propertySpace(propertyCards[14], true));
   leftCol.appendChild(propertySpace(propertyCards[3], true));
   leftCol.appendChild(propertySpace(propertyCards[13], true));
@@ -231,9 +250,11 @@ const displayGameBoard = () => {
   rightCol.appendChild(propertySpace(propertyCards[23]));
   rightCol.appendChild(propertySpace(propertyCards[24]));
   rightCol.appendChild(chestSpace());
+  rightCol.lastChild.id = "chestSpace3";
   rightCol.appendChild(propertySpace(propertyCards[25]));
   rightCol.appendChild(propertySpace(propertyCards[5]));
   rightCol.appendChild(chanceSpace());
+  rightCol.lastChild.id = "chanceSpace3";
   rightCol.appendChild(propertySpace(propertyCards[26]));
   rightCol.appendChild(luxuryTax);
   rightCol.appendChild(propertySpace(propertyCards[27]));
@@ -242,16 +263,17 @@ const displayGameBoard = () => {
   botRow.appendChild(propertySpace(propertyCards[10]));
   botRow.appendChild(propertySpace(propertyCards[9]));
   botRow.appendChild(chanceSpace());
+  botRow.lastChild.id = "chanceSpace1";
   botRow.appendChild(propertySpace(propertyCards[8]));
   botRow.appendChild(propertySpace(propertyCards[2]));
   botRow.appendChild(incomeTax);
   botRow.appendChild(propertySpace(propertyCards[7]));
   botRow.appendChild(chestSpace());
+  botRow.lastChild.id = "chestSpace1";
   botRow.appendChild(propertySpace(propertyCards[6]));
   botRow.appendChild(go);
 
   mainContainer.appendChild(gameBoardMainContainer);
-
 };
 
 const displayPlayerPositions = () => {};

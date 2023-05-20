@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+}
+
+#gameBoardCenterContainer {
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Card Container */
+#cardDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px white;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 20rem;
+  height: 90%;
+
+  gap: .33rem;
+}
+
+.cardValueContainer {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  width: 90%;
+  }
+
+.cardValueLabel {
+  font-size: 1.4rem;
+}
+
+.cardValueContent {
+  font-size: 1.5rem;
+}
+
+#cardGroupContainer {
+  justify-content: center;
+}
+
+#cardNameContainer {
+  justify-content: center;
+}
+
+#cardNameLabel {
+
+}
+
+#cardNameValue {
+  font-weight: bold;
+}
+
+#cardDescriptionContainer {
+
+}
+
+#cardCostContainer {
+
+}
+
+#cardRentContainer {
+
+}
+
+#cardRentLabel {
+
+}
+
+#cardRentValue {
+  color: orange;
+  font-weight: bold;
+}
+
+#cardFinePrintValue {
+  font-size: 1rem;
+}
+
+#cardDetailsHouseRent {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: .25rem;
+  width: 80%;
+  padding: .5rem 1rem;
+
+  border: solid 1px white;
+  border-radius: .5rem;
+}
+
+.cardHouseRentContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#cardHouseRent1Value,
+#cardHouseRent2Value,
+#cardHouseRent3Value,
+#cardHouseRent4Value,
+#cardHouseRent5Value {
+  color: orange;
+}
+
+#cardHouseRent5Value {
+  font-weight: bold;
+
+}
+
+#cardDetailsMortgage {
+
+}
+
+#cardDetailsHouseCost {
+
+}
+
+#cardFinePrintValue {
+  text-align: center;
+}
+

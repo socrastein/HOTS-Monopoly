@@ -12,13 +12,14 @@
 
 .gameBoardSpace {
   display: flex;
+  gap: 0.5rem;
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0.2rem;
-  box-shadow: 0 0 .5rem rgba(0, 0, 100, 0.75);
-  border-radius: .75rem;
-  border: ridge 3px rgba(0, 0, 0, 1)
+  box-shadow: 0 0 0.5rem rgba(0, 0, 100, 0.75);
+  border-radius: 0.75rem;
+  border: ridge 3px rgba(0, 0, 0, 1);
 }
 
 .gameBoardProperty {
@@ -32,7 +33,6 @@
 .gameBoardProperty,
 .gameBoardChance,
 .gameBoardChest {
-  
 }
 
 .gameBoardPropertyBanner {
@@ -43,14 +43,15 @@
   background-color: rgba(50, 50, 50, 0.75);
   color: rgba(255, 255, 255, 1);
   font-weight: bold;
-  border-radius: .5rem;
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
 }
 
 .gameBoardPropertyAvatar {
   height: 3.5rem;
   width: 3.5rem;
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 1);
   border-radius: 50%;
-  border: 2px solid rgba(245, 245, 245, 0.6);
   background-position: center;
   background-size: cover;
 }
@@ -137,13 +138,13 @@
 
 .cornerTag {
   color: white;
-  padding: 0.25rem;
+  padding: 1px 3px;
   font-size: 1rem;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
-  background-color: rgba(33, 33, 33, 0.75);
-  border-radius: .5rem;
+  background-color: rgba(33, 33, 33, 0.5);
+  border-radius: 0.5rem;
 }
 
 #gameBoardParking,
@@ -156,11 +157,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   justify-content: space-between;
-  border-radius: .75rem;
-}
-
-#gameBoardCenterContainer {
-  aspect-ratio: 1;
+  border-radius: 0.75rem;
+  border: ridge 3px rgba(0, 0, 0, 1);
 }
 
 #gameBoardParking {

@@ -22,7 +22,7 @@ const propertyCards = [
   {//0
     space: 12,
     group: 0,
-    groupName: "Utilities",
+    groupName: "Bruiser Camp",
     name: "Utility 1",
     owner: "Bank",
     price: 150,
@@ -34,7 +34,7 @@ const propertyCards = [
   {//1
     space: 28,
     group: 0,
-    groupName: "Utilities",
+    groupName: "Bruiser Camp",
     name: "Utility 2",
     owner: "Bank",
     price: 150,
@@ -46,7 +46,7 @@ const propertyCards = [
   {//2
     space: 5,
     group: 1,
-    groupName: "Railroads",
+    groupName: "Boss Camp",
     name: "Rail 1",
     owner: "Bank",
     price: 200,
@@ -58,7 +58,7 @@ const propertyCards = [
   {//3
     space: 15,
     group: 1,
-    groupName: "Railroads",
+    groupName: "Boss Camp",
     name: "Rail 2",
     owner: "Bank",
     price: 200,
@@ -70,7 +70,7 @@ const propertyCards = [
   {//4
     space: 25,
     group: 1,
-    groupName: "RailRoads",
+    groupName: "Boss Camp",
     name: "Rail 3",
     owner: "Bank",
     price: 200,
@@ -82,7 +82,7 @@ const propertyCards = [
   {//5
     space: 35,
     group: 1,
-    groupName: "RailRoads",
+    groupName: "Boss Camp",
     name: "Rail 4",
     owner: "Bank",
     price: 200,
@@ -94,7 +94,7 @@ const propertyCards = [
   {//6
     space: 1,
     group: 2,
-    groupName: "Group 1",
+    groupName: "Haunted Mines",
     name: "Erik the Red",
     owner: "Bank",
     price: 60,
@@ -111,7 +111,7 @@ const propertyCards = [
   {//7
     space: 3,
     group: 2,
-    groupName: "Group 1",
+    groupName: "Haunted Mines",
     name: "Murky",
     owner: "Bank",
     price: 60,
@@ -128,7 +128,7 @@ const propertyCards = [
   {//8
     space: 6,
     group: 3,
-    groupName: "Group 2",
+    groupName: "Hanamura",
     name: "Hanzo",
     owner: "Bank",
     price: 100,
@@ -145,7 +145,7 @@ const propertyCards = [
   {//9
     space: 8,
     group: 3,
-    groupName: "Group 2",
+    groupName: "Hanamura",
     name: "Genji",
     owner: "Bank",
     price: 100,
@@ -162,7 +162,7 @@ const propertyCards = [
   {//10
     space: 9,
     group: 3,
-    groupName: "Group 2",
+    groupName: "Hanamura",
     name: "D.Va",
     owner: "Bank",
     price: 120,
