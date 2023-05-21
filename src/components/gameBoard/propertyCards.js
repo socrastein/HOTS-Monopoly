@@ -1,3 +1,35 @@
+import hauntedMines from "../gameDisplay/banners/mines.jpg";
+import hanamura from "../gameDisplay/banners/hanamura.jpg";
+import towers from "../gameDisplay/banners/towers.jpg";
+import volskaya from "../gameDisplay/banners/volskaya.jpg";
+import dragonshire from "../gameDisplay/banners/dragon.jpg";
+import warhead from "../gameDisplay/banners/warhead.jpg";
+import infernal from "../gameDisplay/banners/infernal.jpg";
+import cursed from "../gameDisplay/banners/cursed.jpg";
+
+import erik from "../gameDisplay/banners/erik.jpg";
+import murky from "../gameDisplay/banners/murky.jpg";
+import hanzo from "../gameDisplay/banners/hanzo.jpg";
+import genji from "../gameDisplay/banners/genji.jpg";
+import dva from "../gameDisplay/banners/dva.jpg";
+import sylvanas from "../gameDisplay/banners/sylvanas.jpg";
+import arthas from "../gameDisplay/banners/arthas.jpg";
+import illidan from "../gameDisplay/banners/illidan.jpg";
+import tracer from "../gameDisplay/banners/tracer.jpg";
+import mei from "../gameDisplay/banners/mei.jpg";
+import zarya from "../gameDisplay/banners/zarya.jpg";
+import chromie from "../gameDisplay/banners/chromie.jpg";
+import alex from "../gameDisplay/banners/alexstrasza.jpg";
+import deathwing from "../gameDisplay/banners/deathwing.jpg";
+import raynor from "../gameDisplay/banners/raynor.jpg";
+import nova from "../gameDisplay/banners/nova.jpg";
+import hammer from "../gameDisplay/banners/hammer.jpg";
+import imperius from "../gameDisplay/banners/imperius.jpg";
+import valla from "../gameDisplay/banners/valla.jpg";
+import diablo from "../gameDisplay/banners/diablo.jpg";
+import orphea from "../gameDisplay/banners/orphea.jpg";
+import liming from "../gameDisplay/banners/liming.jpg";
+
 const utilityRent = (diceTotal, ownBoth = false) => {
   let multiplier;
   if (ownBoth) {
@@ -13,6 +45,7 @@ const railroadRent = (numberOwned) => {
   if (numberOwned == 2) rent = 50;
   if (numberOwned == 3) rent = 100;
   if (numberOwned == 4) rent = 200;
+  return rent;
 };
 
 const propertyCards = [
@@ -95,7 +128,9 @@ const propertyCards = [
     space: 1,
     group: 2,
     groupName: "Haunted Mines",
+    groupBanner: hauntedMines,
     name: "Erik the Red",
+    banner: erik,
     owner: "Bank",
     price: 60,
     houses: 0,
@@ -112,7 +147,9 @@ const propertyCards = [
     space: 3,
     group: 2,
     groupName: "Haunted Mines",
+    groupBanner: hauntedMines,
     name: "Murky",
+    banner: murky,
     owner: "Bank",
     price: 60,
     houses: 0,
@@ -128,8 +165,10 @@ const propertyCards = [
   {//8
     space: 6,
     group: 3,
-    groupName: "Hanamura",
+    groupName: "Hanamura Temple",
+    groupBanner: hanamura,
     name: "Hanzo",
+    banner: hanzo,
     owner: "Bank",
     price: 100,
     houses: 0,
@@ -145,8 +184,10 @@ const propertyCards = [
   {//9
     space: 8,
     group: 3,
-    groupName: "Hanamura",
+    groupName: "Hanamura Temple",
+    groupBanner: hanamura,
     name: "Genji",
+    banner: genji,
     owner: "Bank",
     price: 100,
     houses: 0,
@@ -162,8 +203,10 @@ const propertyCards = [
   {//10
     space: 9,
     group: 3,
-    groupName: "Hanamura",
+    groupName: "Hanamura Temple",
+    groupBanner: hanamura,
     name: "D.Va",
+    banner: dva,
     owner: "Bank",
     price: 120,
     houses: 0,
@@ -179,8 +222,10 @@ const propertyCards = [
   {//11
     space: 11,
     group: 4,
-    groupName: "Group 3",
+    groupName: "Towers of Doom",
+    groupBanner: towers,
     name: "Sylvanas",
+    banner: sylvanas,
     owner: "Bank",
     price: 140,
     houses: 0,
@@ -196,8 +241,10 @@ const propertyCards = [
   {//12
     space: 13,
     group: 4,
-    groupName: "Group 3",
+    groupName: "Towers of Doom",
+    groupBanner: towers,
     name: "Arthas",
+    banner: arthas,
     owner: "Bank",
     price: 140,
     houses: 0,
@@ -213,8 +260,10 @@ const propertyCards = [
   {//13
     space: 14,
     group: 4,
-    groupName: "Group 3",
+    groupName: "Towers of Doom",
+    groupBanner: towers,
     name: "Illidan",
+    banner: illidan,
     owner: "Bank",
     price: 160,
     houses: 0,
@@ -230,8 +279,10 @@ const propertyCards = [
   {//14
     space: 16,
     group: 5,
-    groupName: "Group 4",
+    groupName: "Volskaya Foundry",
+    groupBanner: volskaya,
     name: "Tracer",
+    banner: tracer,
     owner: "Bank",
     price: 180,
     houses: 0,
@@ -247,8 +298,10 @@ const propertyCards = [
   {//15
     space: 18,
     group: 5,
-    groupName: "Group 4",
+    groupName: "Volskaya Foundry",
+    groupBanner: volskaya,
     name: "Mei",
+    banner: mei,
     owner: "Bank",
     price: 180,
     houses: 0,
@@ -264,8 +317,10 @@ const propertyCards = [
   {//16
     space: 19,
     group: 5,
-    groupName: "Group 4",
+    groupName: "Volskaya Foundry",
+    groupBanner: volskaya,
     name: "Zarya",
+    banner: zarya,
     owner: "Bank",
     price: 200,
     houses: 0,
@@ -281,8 +336,10 @@ const propertyCards = [
   {//17
     space: 21,
     group: 6,
-    groupName: "Group 5",
+    groupName: "Dragon Shire",
+    groupBanner: dragonshire,
     name: "Chromie",
+    banner: chromie,
     owner: "Bank",
     price: 220,
     houses: 0,
@@ -298,8 +355,10 @@ const propertyCards = [
   {//18
     space: 23,
     group: 6,
-    groupName: "Group 5",
+    groupName: "Dragon Shire",
+    groupBanner: dragonshire,
     name: "Alexstraza",
+    banner: alex,
     owner: "Bank",
     price: 220,
     houses: 0,
@@ -315,8 +374,10 @@ const propertyCards = [
   {//19
     space: 24,
     group: 6,
-    groupName: "Group 5",
+    groupName: "Dragon Shire",
+    groupBanner: dragonshire,
     name: "Deathwing",
+    banner: deathwing,
     owner: "Bank",
     price: 240,
     houses: 0,
@@ -332,8 +393,10 @@ const propertyCards = [
   {//20
     space: 26,
     group: 7,
-    groupName: "Group 6",
-    name: "Property 6:1",
+    groupName: "Warhead Junction",
+    groupBanner: warhead,
+    name: "Raynor",
+    banner: raynor,
     owner: "Bank",
     price: 260,
     houses: 150,
@@ -349,12 +412,14 @@ const propertyCards = [
   {//21
     space: 27,
     group: 7,
-    groupName: "Group 6",
-    name: "Property 6:2",
+    groupName: "Warhead Junction",
+    groupBanner: warhead,
+    name: "Nova",
+    banner: nova,
     owner: "Bank",
     price: 260,
     houses: 150,
-    rent: [22, 110, 330, 800, 975, 1150],
+    rentRange: [22, 110, 330, 800, 975, 1150],
     get rent() {
       return this.rentRange[houses];
     },
@@ -366,8 +431,10 @@ const propertyCards = [
   {//22
     space: 29,
     group: 7,
-    groupName: "Group 6",
-    name: "Property 6:3",
+    groupName: "Warhead Junction",
+    groupBanner: warhead,
+    name: "Sgt. Hammer",
+    banner: hammer,
     owner: "Bank",
     price: 280,
     houses: 150,
@@ -383,8 +450,10 @@ const propertyCards = [
   {//23
     space: 31,
     group: 8,
-    groupName: "Group 7",
-    name: "Property 7:1",
+    groupName: "Infernal Shrines",
+    groupBanner: infernal,
+    name: "Imperius",
+    banner: imperius,
     owner: "Bank",
     price: 300,
     houses: 0,
@@ -400,8 +469,10 @@ const propertyCards = [
   {//24
     space: 32,
     group: 8,
-    groupName: "Group 7",
-    name: "Property 7:2",
+    groupName: "Infernal Shrines",
+    groupBanner: infernal,
+    name: "Valla",
+    banner: valla,
     owner: "Bank",
     price: 300,
     houses: 0,
@@ -417,8 +488,10 @@ const propertyCards = [
   {//25
     space: 34,
     group: 8,
-    groupName: "Group 7",
-    name: "Property 7:3",
+    groupName: "Infernal Shrines",
+    groupBanner: infernal,
+    name: "Diablo",
+    banner: diablo,
     owner: "Bank",
     price: 320,
     houses: 0,
@@ -434,8 +507,10 @@ const propertyCards = [
   {//26
     space: 37,
     group: 9,
-    groupName: "Group 8",
-    name: "Property 8:1",
+    groupName: "Cursed Hollow",
+    groupBanner: cursed,
+    name: "Orphea",
+    banner: orphea,
     owner: "Bank",
     price: 350,
     houses: 0,
@@ -443,7 +518,7 @@ const propertyCards = [
     get rent() {
       return this.rentRange[houses];
     },
-    houseCost: 0,
+    houseCost: 200,
     get mortgage() {
       return this.price / 2;
     },
@@ -451,8 +526,10 @@ const propertyCards = [
   {//27
     space: 39,
     group: 9,
-    groupName: "Group 8",
-    name: "Property 8:2",
+    groupName: "Cursed Hollow",
+    groupBanner: cursed,
+    name: "Li-Ming",
+    banner: liming,
     owner: "Bank",
     price: 400,
     houses: 0,
@@ -460,7 +537,7 @@ const propertyCards = [
     get rent() {
       return this.rentRange[houses];
     },
-    houseCost: 0,
+    houseCost: 200,
     get mortgage() {
       return this.price / 2;
     },

@@ -9,52 +9,94 @@
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 1rem;
+
+  
+
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* Main Card Container */
 #cardDetailsContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 1px white;
-  border-radius: 1rem;
-  padding: 1rem;
+
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: .5rem;
+
+
+
+  padding: .5rem; 
   width: 20rem;
-  height: 90%;
+  height: 100%;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   gap: .33rem;
 }
 
 .cardValueContainer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   color: white;
   width: 90%;
+  border-radius: .5rem;
   }
 
 .cardValueLabel {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 
 .cardValueContent {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
 }
 
 #cardGroupContainer {
+  width: 100%;
+  height: 2rem;
+  border-radius: .5rem;
+}
+
+#cardGroupValue {
+  font-size: 1.3rem;
+}
+
+#cardGroupContainer, #cardNameContainer {
   justify-content: center;
 }
 
 #cardNameContainer {
-  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-#cardNameLabel {
 
+
+#cardNameLabel {
+  
+}
+
+#cardGroupValue,
+#cardNameValue,
+#cardCostValue,
+#cardRentValue,
+#cardHouseRent5Value,
+#cardHouseCostValue,
+#cardMortgageValue {
+  font-weight: bold;
 }
 
 #cardNameValue {
-  font-weight: bold;
+  font-size: 2.5rem;
 }
 
 #cardDescriptionContainer {
@@ -63,6 +105,10 @@
 
 #cardCostContainer {
 
+}
+
+#cardCostValue {
+  color: lightcoral;
 }
 
 #cardRentContainer {
@@ -75,7 +121,6 @@
 
 #cardRentValue {
   color: orange;
-  font-weight: bold;
 }
 
 #cardFinePrintValue {
@@ -101,28 +146,30 @@
   width: 100%;
 }
 
-#cardHouseRent1Value,
-#cardHouseRent2Value,
-#cardHouseRent3Value,
-#cardHouseRent4Value,
-#cardHouseRent5Value {
+.cardHouseRentContainer > .cardValueLabel {
+  font-size: 1.2rem;
+}
+
+.cardHouseRentContainer > .cardValueContent {
+  font-size: 1.3rem;
   color: orange;
 }
 
+
 #cardHouseRent5Value {
-  font-weight: bold;
-
 }
 
-#cardDetailsMortgage {
-
+#cardMortgageValue {
+  color: lightgreen;
 }
 
-#cardDetailsHouseCost {
-
+#cardHouseCostValue {
+  color: lightcoral;
 }
 
 #cardFinePrintValue {
+  font-size: .9rem;
   text-align: center;
+  margin-top: 1rem;
 }
 

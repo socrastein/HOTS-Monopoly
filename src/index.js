@@ -19,7 +19,7 @@ import mobileMenu from "./components/X_navBar/toggleMobileMenu";
 
 import displayStartMenu from "./components/gameDisplay/menuStart";
 import displayGameBoard from "./components/gameDisplay/displayGameBoard";
-
+import displayDetails from "./components/gameDisplay/displaySpaceDetails";
 // Loading screen overlay to allow main elements and script to load before displaying
 // If there isn't much to load, it'll be fast enough you won't see the loading screen at all
 loadingScreen.loadingScreenStart();
@@ -47,6 +47,7 @@ document.getElementById("favicon").href = favicon;
 
 // displayStartMenu();
 displayGameBoard();
+displayDetails("propertySpace6");
 
 
 // Make sure this comes after the main body content is loaded so it's at the end of the document

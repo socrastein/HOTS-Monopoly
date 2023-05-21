@@ -100,10 +100,24 @@ const bossLabels = [
   "1 Boss Camp:",
   "2 Boss Camps:",
   "3 Boss Camps:",
-  "4 Boss Camps:"
-]
+  "4 Boss Camps:",
+];
 
-const finePrintProperty = `Sacrificed heroes can be recruited again for the sacrifice cost +10%`;
+const propertyColors = [
+  "rgba(0,0,0,.25)", //bruiser
+  "rgba(0,0,0,.25)", //boss
+  "rgba(50,5,0,.75)", //haunted mines
+  "rgba(255,150,255,.75)", //hanamura
+  "rgba( 0, 75, 75,.75)", //towers of doom
+  "rgba( 50, 155, 255,.75)", //volskaya
+  "rgba( 200, 0, 0,.75)", //dragon shire
+  "rgba( 200, 150, 0,.75)", //warhead junction
+  "rgba( 255, 125, 0,.75)", //infernal shrines
+  "rgba(100, 0, 165,.75)", //cursed hollow
+];
+
+const finePrintProperty = `Sacrificed heroes can be recruited again 
+for the sacrifice value +10%`;
 
 const displayProperty = (property) => {
   const centerContainer = document.getElementById("gameBoardCenterContainer");
@@ -116,13 +130,28 @@ const displayProperty = (property) => {
   cardDetailsContainer.id = "cardDetailsContainer";
   centerContainer.appendChild(cardDetailsContainer);
 
+  centerContainer.style.backgroundImage = `linear-gradient(
+    to right,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,0)),url(${property.banner}`;
+
+
+  cardDetailsContainer.style.backgroundImage = `linear-gradient(
+    to bottom,
+    rgba(0,0,0,0),
+    rgba(0,0,0,.8) 25%),
+    url(${property.groupBanner})`;
+
+  
+
   const group = createCardLabel("Group", "", property.groupName);
+  group.style.backgroundColor = propertyColors[property.group];
+  
   const name = createCardLabel("Name", "", property.name);
   const owner = createCardLabel("Owner", "Owner:", property.owner);
   // const description = createCardLabel('Description', '', property.description)
   const cost = createCardLabel("Cost", "Cost:", property.price);
   const rent = createCardLabel("Rent", "Damage:", property.rentRange[0]);
-  
 
   const houseRent = document.createElement("div");
   houseRent.id = "cardDetailsHouseRent";
@@ -135,11 +164,19 @@ const displayProperty = (property) => {
       )
     );
     houseRent.lastChild.classList.add("cardHouseRentContainer");
+    if(i==4){
+      let divide = document.createElement("hr");
+      houseRent.appendChild(divide);
+    }
   }
 
-  const housePrice = createCardLabel("HouseCost", "Tower Cost:", property.houseCost);
-  const mortgage = createCardLabel("Mortage", 'Sacrifice:', property.mortgage);
-  const finePrint = createCardLabel("FinePrint", '', finePrintProperty);
+  const housePrice = createCardLabel(
+    "HouseCost",
+    "Tower Cost:",
+    property.houseCost
+  );
+  const mortgage = createCardLabel("Mortgage", "Sacrifice:", property.mortgage);
+  const finePrint = createCardLabel("FinePrint", "", finePrintProperty);
 
   cardDetailsContainer.appendChild(group);
   cardDetailsContainer.appendChild(name);
