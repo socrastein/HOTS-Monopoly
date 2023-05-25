@@ -45,9 +45,9 @@ document.getElementById("favicon").href = favicon;
 // };
 
 
-// displayStartMenu();
-displayGameBoard();
-displayDetails("propertySpace6");
+displayStartMenu();
+// displayGameBoard();
+// displayDetails("propertySpace27");
 
 
 // Make sure this comes after the main body content is loaded so it's at the end of the document
