@@ -1,119 +1,42 @@
-import "./menuStyle.css";
 import HOTSLogo from "../HOTSLogo.jpg";
-import toggleOn from "./toggleOn.svg";
-import toggleOff from "./toggleOff.svg";
 
+import cardFactory from "./cardFactory";
 import gameState from "../gameState/gameState";
+import startGame from "../gameState/gameStart"; 
 
-const filterBlue = "invert(57%) sepia(53%) saturate(5771%) hue-rotate(163deg) brightness(97%) contrast(101%)";
-const filterBlack = "invert()";
+const toggleGameState = (option) => {
+  if (gameState[option]) {
+    gameState[option] = false;
+  } else gameState[option] = true;
 
-const createMenuOption = (name) => {
-  const container = document.createElement("div");
-  container.id = `${name}Container`;
-  container.classList.add("menuOptionContainer");
-
-  const text = document.createElement("p");
-  text.id = `${name}Text`;
-  text.classList.add("menuOptionText");
-
-  container.appendChild(text);
-
-  return container;
+  console.log(gameState[option]);
 };
 
-const toggleButton = (event) => {
-  const button = document.getElementById(event.target.id);
-  if (button.src == toggleOn) {
-    button.src = toggleOff;
-    button.style.filter = filterBlack;
-  } else {
-    button.src = toggleOn;
-    button.style.filter = filterBlue;
-  }
-  console.log(event);
-};
-
-const createMenuToggle = (name) => {
-  const container = document.createElement("div");
-  container.id = `${name}Container`;
-  container.classList.add("menuOptionContainer");
-
-  const text = document.createElement("p");
-  text.id = `${name}Text`;
-  text.classList.add("menuToggleText");
-
-  const toggle = document.createElement("img");
-  toggle.id = `${name}Toggle`;
-  toggle.classList.add("menuToggleImage");
-  toggle.src = toggleOff;
-  toggle.addEventListener("click", toggleButton);
-
-  container.appendChild(text);
-  container.appendChild(toggle);
-
-  return container;
-};
-
-const createMenuCycle = (name) => {
-  const container = document.createElement("div");
-  container.id = `${name}Container`;
-  container.classList.add("menuOptionContainer");
-
-  const text = document.createElement("p");
-  text.id = `${name}Text`;
-  text.classList.add("menuToggleText");
-
-  const option = document.createElement("p");
-  option.id = `${name}Option`;
-  option.classList.add("menuCycleOption");
-
-  container.appendChild(text);
-  container.appendChild(option);
-
-  return container;
-};
-
-const displayStartMenu = () => {
+const displayMainMenu = () => {
   // HOTS MONOPOLY
   //  New Game
   //  Load Game
   //  Options
+  console.log("Main Menu");
   const mainContainer = document.getElementById("mainContainer");
   mainContainer.innerHTML = "";
 
-  const menuContainer = document.createElement("div");
-  menuContainer.id = "menuContainer";
+  const menuContainer = cardFactory.container("mainMenu");
+
+  const menuTitle = cardFactory.title("Main Menu");
+  const menuNew = cardFactory.button("New Game", displayNewGameMenu);
+  const menuLoad = cardFactory.button("Load Game", displayLoadGameMenu);
+  const menuOptions = cardFactory.button("Options", displayGameOptions);
+
   mainContainer.appendChild(menuContainer);
-
-  const menuTitle = createMenuOption("startMenuTitle");
-  menuTitle.classList.add("menuTitleContainer", "menuTitle");
-  const menuNew = createMenuOption("startMenuNew");
-  menuNew.addEventListener("click", displayNewGameMenu);
-  const menuLoad = createMenuOption("startMenuLoad");
-  menuLoad.addEventListener("click", displayLoadGameMenu);
-  const menuOptions = createMenuOption("startMenuOptions");
-  menuOptions.addEventListener("click", displayGameOptions);
-
   menuContainer.appendChild(menuTitle);
+  menuContainer.appendChild(cardFactory.separator());
   menuContainer.appendChild(menuNew);
   menuContainer.appendChild(menuLoad);
   menuContainer.appendChild(menuOptions);
-
-  const titleText = document.getElementById("startMenuTitleText");
-  titleText.classList.add("menuTitle");
-  const newText = document.getElementById("startMenuNewText");
-  const loadText = document.getElementById("startMenuLoadText");
-  const optionsText = document.getElementById("startMenuOptionsText");
-
-  titleText.textContent = "MONOPOLY";
-  newText.textContent = "New Game";
-  loadText.textContent = "Load Game";
-  optionsText.textContent = "Options";
 };
 
 const displayNewGameMenu = () => {
-  console.log("New Game");
   // NEW GAME
   //  Player # : 1-4
   //  AI : No, 1, 2
@@ -121,72 +44,97 @@ const displayNewGameMenu = () => {
   //  Free Parking : Just Parking, Bonus Pot
   //  Housing Supply : Limited, Unlimited
   //  Auction Unsold Property : Yes, No
-
+  console.log("New Game");
   const mainContainer = document.getElementById("mainContainer");
   mainContainer.innerHTML = "";
 
-  const menuContainer = document.createElement("div");
-  menuContainer.id = "menuContainer";
-  mainContainer.appendChild(menuContainer);
+  const menu = cardFactory.container("newMenu");
 
-  const menuTitle = createMenuOption("newGameTitle");
-  menuTitle.classList.add("menuTitleContainer", "menuTitle");
-  menuTitle.textContent = "New Game";
+  const title = cardFactory.title("New Game");
+  const players = cardFactory.labelDropPair("Players", [1, 2, 3, 4], 1);
+  const AI = cardFactory.labelDropPair("AI", ["None", 1, 2], 0);
 
-  const menuPlayers = createMenuCycle("newGamePlayers");
-  const menuSpeed = createMenuToggle("newGameSpeed");
-  const menuParking = createMenuToggle("newGameParking");
-  const menuHousing = createMenuToggle("newGameHousing");
-  const menuAuction = createMenuToggle("newGameAuction");
-  const menuStart = createMenuOption("newGameStart");
+  const speed = cardFactory.labelTogglePair(
+    "Fast Game",
+    () => toggleGameState("isSpeedGame"),
+    false
+  );
+  const parking = cardFactory.labelTogglePair(
+    "Corner Keep Bonus",
+    () => toggleGameState("isFreeParkingBonus"),
+    false
+  );
+  const housing = cardFactory.labelTogglePair(
+    "Building Limited",
+    () => toggleGameState("isHousingLimited"),
+    true
+  );
 
-  menuContainer.appendChild(menuTitle);
-  menuContainer.appendChild(menuPlayers);
-  menuContainer.appendChild(menuSpeed);
-  menuContainer.appendChild(menuParking);
-  menuContainer.appendChild(menuHousing);
-  menuContainer.appendChild(menuAuction);
-  menuContainer.appendChild(menuStart);
+  const auction = cardFactory.labelTogglePair(
+    "Auction Passed Recruits",
+    () => toggleGameState("isUnsoldPropertyAuctioned"),
+    false
+  )
 
-  // Add text for all the buttons in the menu
-  const playersText = document.getElementById("newGamePlayersText");
-  playersText.textContent = "Players";
-  const playersOption = document.getElementById("newGamePlayersOption");
-  playersOption.textContent = gameState.numberOfPlayers;
-  const speedText = document.getElementById("newGameSpeedText");
-  speedText.textContent = "Game Speed";
-  const parkingText = document.getElementById("newGameParkingText");
-  parkingText.textContent = "Free Parking Bonus";
-  const housingText = document.getElementById("newGameHousingText");
-  housingText.textContent = "Limited Structures";
-  const auctionText = document.getElementById("newGameAuctionText");
-  auctionText.textContent = "Auction Property";
-  const startText = document.getElementById("newGameStartText");
-  startText.textContent = "START GAME";
+  const start = cardFactory.button("START", startGame);
 
-  // Add click events to each button for changing gameState values
-  menuPlayers.addEventListener("click", () => {
-    console.log(gameState.numberOfPlayers);
-    gameState.numberOfPlayers ++;
-    if(gameState.numberOfPlayers > 4){
-      gameState.numberOfPlayers = 1;
-    }
-    playersOption.textContent = gameState.numberOfPlayers;
-  });
+  mainContainer.appendChild(menu);
+  menu.appendChild(cardFactory.backButton(displayMainMenu));
+
+  menu.appendChild(title);
+  menu.appendChild(cardFactory.separator());
+
+  menu.appendChild(players);
+  menu.appendChild(AI);
+  menu.appendChild(housing);
+  menu.appendChild(speed);
+  menu.appendChild(parking);
+  menu.appendChild(auction);
+  menu.appendChild(cardFactory.separator());
+
+  menu.appendChild(start);
 };
 
 const displayLoadGameMenu = () => {
-  console.log("Load Game");
-
   // LOAD GAME
   // Load
   // Delete
   // List of saved games
   // Radio button select to load/delete
+  console.log("Load Game");
+  const mainContainer = document.getElementById("mainContainer");
+  mainContainer.innerHTML = "";
+
+  const menu = cardFactory.container("loadMenu");
+
+  const title = cardFactory.title("Load Game");
+
+  mainContainer.appendChild(menu);
+  menu.appendChild(cardFactory.backButton(displayMainMenu));
+
+  menu.appendChild(title);
+  menu.appendChild(cardFactory.separator());
+
+  menu.appendChild(cardFactory.subTitle("COMING SOON"));
 };
 
 const displayGameOptions = () => {
   console.log("Game Options");
+
+  const mainContainer = document.getElementById("mainContainer");
+  mainContainer.innerHTML = "";
+
+  const menu = cardFactory.container("optionsMenu");
+
+  const title = cardFactory.title("Options");
+
+  mainContainer.appendChild(menu);
+  menu.appendChild(cardFactory.backButton(displayMainMenu));
+
+  menu.appendChild(title);
+  menu.appendChild(cardFactory.separator());
+
+  menu.appendChild(cardFactory.subTitle("COMING SOON"));
 };
 
-export default displayStartMenu;
+export default displayMainMenu;
