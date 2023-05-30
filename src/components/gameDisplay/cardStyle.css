@@ -1,48 +1,153 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+hr {
+  width: 80%;
+  height: 0.05rem;
+  border: none;
+  color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 .cardContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(96vw, 30rem);
+  margin-top: 4rem;
+  padding: 3rem;
 
+  gap: 2rem;
+  border: none;
+  border-radius: 1rem;
+
+  background-color: rgba(50, 50, 200, 0.75);
+  box-shadow: 0 0 1rem lightblue;
+}
+
+.cardBackButton {
+  position: absolute;
+  left: -6rem;
+  top: 2rem;
+  transform: rotate(180deg);
+  filter: invert();
+  background-image: url("./icons/arrow.svg");
+  background-position: center;
+  background-size: cover;
+
+  aspect-ratio: 1;
+  height: 4rem;
+}
+
+.cardBackButton:hover {
+  transform: scale(1.1) rotate(180deg);
+  cursor: pointer;
+}
+
+.cardTitle, .cardSubTitle {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: whitesmoke;
 }
 
 .cardTitle {
-
+  font-size: 3rem;
 }
 
 .cardSubTitle {
-
+  font-size: 2.2rem;
 }
 
 .cardSeparator {
+}
 
+.cardButton {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: whitesmoke;
+
+  width: 16rem;
+  padding: 1rem;
+
+  border: 1px solid whitesmoke;
+  border-radius: 1rem;
+
+  transition: transform 250ms, box-shadow 250ms;
+
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.cardButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0 0 0.5rem whitesmoke;
+}
+
+.cardBanner {
+}
+
+.cardImage {
+}
+
+.cardLabelValueContainer,
+.cardLabelToggleContainer,
+.cardLabelSelectContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
 }
 
 .cardLabelValueContainer {
-
 }
 
 .cardLabel {
-
+  font-size: 1.2rem;
+  color: whitesmoke;
 }
 
 .cardValue {
-
 }
 
 .cardLabelToggleContainer {
-
 }
 
 .cardToggle {
+  transition: 250ms;
+}
+
+.cardToggle:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.cardToggleOn {
+  filter: invert();
+}
+
+.cardToggleOff {
 
 }
 
-.cardLabelDropContainer {
-
+.cardLabelSelectContainer {
 }
 
-.cardDrop {
-  
+.cardSelect {
+  font-size: 1rem;
+  text-align: center;
+  padding: .5rem 1rem;
+  border-radius: .75rem;
+}
+
+.cardSelect:hover {
+  cursor: pointer;
+}
+
+.cardSelectOption {
 }

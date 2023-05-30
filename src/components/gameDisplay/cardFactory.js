@@ -1,7 +1,7 @@
 import "./cardStyle.css";
 
-import toggleOn from "./toggleOn.svg";
-import toggleOff from "./toggleOff.svg";
+import toggleOn from "./icons/toggleOn.svg";
+import toggleOff from "./icons/toggleOff.svg";
 
 //CSS Classes used for card elements:
 //.cardContainer
@@ -9,6 +9,10 @@ import toggleOff from "./toggleOff.svg";
 //.cardSubTitle
 
 //.cardSeparator
+
+//.cardButton
+//.cardBanner
+//.cardImage
 
 //.cardLabelValueContainer
 //.cardLabel
@@ -21,19 +25,19 @@ import toggleOff from "./toggleOff.svg";
 //.cardSelect
 
 const toggleButton = (event) => {
-  const button = document.getElementById(event.target.id);
+  const button = event.target;
   if (button.src == toggleOn) {
     button.src = toggleOff;
-    button.classList.add("cardToggleOn");
-    button.classList.remove("cardToggleOff");
-  } else {
-    button.src = toggleOn;
     button.classList.add("cardToggleOff");
     button.classList.remove("cardToggleOn");
+  } else {
+    button.src = toggleOn;
+    button.classList.add("cardToggleOn");
+    button.classList.remove("cardToggleOff");
   }
 };
 
-const newCardContainer = (name) => {
+const container = (name) => {
   let container = document.createElement("div");
   container.id = `${name}CardContainer`;
   container.classList.add("cardContainer");
@@ -41,7 +45,15 @@ const newCardContainer = (name) => {
   return container;
 };
 
-const newCardTitle = (title) => {
+const backButton = (fun) => {
+  let container = document.createElement("div");
+  container.classList.add("cardBackButton");
+  container.addEventListener("click", () => fun());
+
+  return container;
+}
+
+const title = (title) => {
   let container = document.createElement("div");
   container.classList.add("cardTitle");
   container.textContent = title;
@@ -49,7 +61,7 @@ const newCardTitle = (title) => {
   return container;
 };
 
-const newCardSubTitle = (title) => {
+const subTitle = (title) => {
   let container = document.createElement("div");
   container.classList.add("cardSubTitle");
   container.textContent = title;
@@ -57,13 +69,38 @@ const newCardSubTitle = (title) => {
   return container;
 };
 
-const newCardSeparator = () => {
+const separator = () => {
   let separator = document.createElement("hr");
   separator.classList.add("cardSeparator");
   return separator;
 };
 
-const newCardLabelValuePair = (label, value) => {
+const button = (label, fun) => {
+  let container = document.createElement("div");
+  container.classList.add("cardButton");
+  container.textContent = label;
+  container.addEventListener("click", () => fun())
+
+  return container;
+}
+
+const banner = (image) => {
+  let container = document.createElement("div");
+  container.classList.add("cardBanner");
+  container.style.backgroundImage = `url(${image})`;
+
+  return container;
+}
+
+const image = (image) => {
+  let container = document.createElement("div");
+  container.classList.add("cardImage");
+  container.style.backgroundImage = `url(${image})`;
+
+  return container;
+}
+
+const labelValuePair = (label, value) => {
   let container = document.createElement("div");
   container.classList.add("cardLabelValueContainer");
 
@@ -81,7 +118,7 @@ const newCardLabelValuePair = (label, value) => {
   return container;
 };
 
-const newCardLabelTogglePair = (label, on = false, fun) => {
+const labelTogglePair = (label, fun, on = false) => {
   let container = document.createElement("div");
   container.classList.add("cardLabelToggleContainer");
 
@@ -93,12 +130,14 @@ const newCardLabelTogglePair = (label, on = false, fun) => {
   toggleImg.classList.add("cardToggle");
   if (on) {
     toggleImg.src = toggleOn;
+    toggleImg.classList.add("cardToggleOn");
   } else {
     toggleImg.src = toggleOff;
+    toggleImg.classList.add("cardToggleOff");
   }
   toggleImg.addEventListener("click", (event) => {
     toggleButton(event);
-    fun;
+    fun();
   });
 
   container.appendChild(labelDiv);
@@ -107,7 +146,7 @@ const newCardLabelTogglePair = (label, on = false, fun) => {
   return container;
 };
 
-const newCardLabelDropPair = (label, options = [], picked = 0) => {
+const labelDropPair = (label, options = [], picked = 0) => {
   let container = document.createElement("div");
   container.classList.add("cardLabelSelectContainer");
 
@@ -119,6 +158,7 @@ const newCardLabelDropPair = (label, options = [], picked = 0) => {
   optionsSelect.classList.add("cardSelect");
   for (let i = 0; i < options.length; i++) {
     let option = document.createElement("option");
+    option.classList.add("cardSelectOption");
     option.value = `${options[i]}`;
     option.textContent = options[i];
 
@@ -134,3 +174,17 @@ const newCardLabelDropPair = (label, options = [], picked = 0) => {
 
   return container;
 };
+
+export default {
+  container,
+  backButton,
+  title,
+  subTitle,
+  separator,
+  button,
+  banner,
+  image,
+  labelValuePair,
+  labelTogglePair,
+  labelDropPair
+}
