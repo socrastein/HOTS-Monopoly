@@ -175,6 +175,28 @@ const labelDropPair = (label, options = [], picked = 0) => {
   return container;
 };
 
+const labelInputPair = (label, placeholder = '') => {
+  let container = document.createElement("div");
+  container.classList.add("cardLabelInputContainer");
+
+  let labelDiv = document.createElement("div");
+  labelDiv.classList.add("cardLabel");
+  labelDiv.textContent = label;
+
+  let input = document.createElement("input");
+  input.type = "text";
+  input.minLength = "1";
+  input.maxLength = "18";
+  input.classList.add("cardInput");
+  input.placeholder = placeholder;
+  input.id = `cardInput${label}`;
+
+  container.appendChild(labelDiv);
+  container.appendChild(input);
+
+  return container;
+}
+
 export default {
   container,
   backButton,
@@ -186,5 +208,6 @@ export default {
   image,
   labelValuePair,
   labelTogglePair,
-  labelDropPair
+  labelDropPair,
+  labelInputPair
 }
