@@ -3,6 +3,7 @@ import HOTSLogo from "../HOTSLogo.jpg";
 import cardFactory from "./cardFactory";
 import gameState from "../gameState/gameState";
 import startGame from "../gameState/gameStart"; 
+import playerSelectMenu from "./menuPlayerSelect";
 
 const toggleGameState = (option) => {
   if (gameState[option]) {
@@ -76,7 +77,7 @@ const displayNewGameMenu = () => {
     false
   )
 
-  const start = cardFactory.button("START", startGame);
+  const start = cardFactory.button("START", () => playerSelectMenu(1));
 
   mainContainer.appendChild(menu);
   menu.appendChild(cardFactory.backButton(displayMainMenu));
