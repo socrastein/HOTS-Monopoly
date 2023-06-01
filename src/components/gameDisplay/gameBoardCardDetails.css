@@ -2,7 +2,7 @@
   margin: 0;
 }
 
-#gameBoardCenterContainer {
+.cardDetailsMainContainer {
   position: relative;
   aspect-ratio: 1;
   width: 100%;
