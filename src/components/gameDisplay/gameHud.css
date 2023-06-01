@@ -1,0 +1,48 @@
+.playerHUDContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: .5rem;
+
+  background-position: center;
+  background-size: cover;
+}
+
+#HUDplayer1 {
+  top: 1rem;
+  left: 1rem;
+}
+#HUDplayer2 {
+  top: 1rem;
+  right: 1rem;
+}
+#HUDplayer3 {}
+#HUDplayer4 {}
+#HUDplayer5 {}
+#HUDplayer6 {}
+
+
+.HUDName {
+  color: whitesmoke;
+  font-size: 2rem;
+}
+
+.HUDIcon {
+  height: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 40%;
+  background-size: cover;
+  background-position: center;
+}
+
+.HUDFunds {
+  color: yellow;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.HUDProperties {
+
+}
