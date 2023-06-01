@@ -1,0 +1,46 @@
+.playerSelectMainContainer {
+  padding-top: 2rem;
+  position: relative;
+  aspect-ratio: 1;
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem;
+
+  
+
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.selectIconsContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.playerIcon {
+  height: 3.5rem;
+  aspect-ratio: 1;
+  border-radius: 40%;
+  background-size: cover;
+  background-position: center;
+}
+
+.playerIcon:hover:not(.playerIconChosen) {
+  transform: scale(1.2) translate(0, -.25rem);
+  cursor: pointer;
+}
+
+.playerIconSelected {
+  transform: scale(1.2) translate(0, -.25rem);
+}
+
+.playerIconChosen {
+  filter: grayscale(1);
+  transform: scale(.8);
+}
