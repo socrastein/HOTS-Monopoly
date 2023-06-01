@@ -17,6 +17,8 @@ import {
 } from "./components/X_navBar/scrollToTop";
 import mobileMenu from "./components/X_navBar/toggleMobileMenu";
 
+
+import startGame from "./components/gameState/gameStart";
 import displayStartMenu from "./components/gameDisplay/menuStart";
 import displayGameBoard from "./components/gameDisplay/displayGameBoard";
 import displayDetails from "./components/gameDisplay/displaySpaceDetails";
@@ -45,7 +47,8 @@ document.getElementById("favicon").href = favicon;
 // };
 
 
-displayStartMenu();
+startGame();
+// displayStartMenu();
 // displayGameBoard();
 // displayDetails("propertySpace27");
 
