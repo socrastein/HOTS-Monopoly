@@ -1,11 +1,16 @@
 import gameState from "./gameState";
-import displayGameBoard from "../gameDisplay/displayGameBoard";
+import updateHUD from "../gameDisplay/displayGameHUD";
+import playerSelectMenu from "../gameDisplay/menuPlayerSelect";
+import menuStart from "../gameDisplay/menuStart";
 
 const startGame = () => {
   console.log("Starting new game");
   const mainContainer = document.getElementById("mainContainer");
   mainContainer.innerHTML = "";
-  displayGameBoard();
+
+  // menuStart();
+  playerSelectMenu(1);
+  updateHUD();
 }
 
 export default startGame;
