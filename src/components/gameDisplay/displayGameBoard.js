@@ -111,6 +111,7 @@ const propertySpaces = [
 
 const displayGameBoard = () => {
   const mainContainer = document.getElementById("mainContainer");
+  mainContainer.innerHTML = "";
   const gameBoardMainContainer = document.createElement("div");
   gameBoardMainContainer.id = "gameBoardMainContainer";
   //15 x 15 grid ; 13 x 13 Gameboard with 1 square border
@@ -123,6 +124,7 @@ const displayGameBoard = () => {
   leftCol.classList.add("gameBoardLeftCol");
   const center = document.createElement("div");
   center.id = "gameBoardCenterContainer";
+  center.className = "cardDetailsMainContainer";
   const rightCol = document.createElement("div");
   rightCol.classList.add("gameBoardRightCol");
   const botRow = document.createElement("div");

@@ -103,7 +103,7 @@ const bossLabels = [
   "4 Boss Camps:",
 ];
 
-const propertyColors = [
+export const propertyColors = [
   "rgba(0,0,0,.25)", //bruiser
   "rgba(0,0,0,.25)", //boss
   "rgba(50,5,0,.75)", //haunted mines
