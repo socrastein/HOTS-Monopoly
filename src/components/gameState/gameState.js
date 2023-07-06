@@ -1,5 +1,6 @@
 const gameState = {
   numberOfPlayers: 2,
+  chosenIcons: [],
   numberOfAI: 0,
   isSpeedGame: false,
   isFreeParkingBonus: false,

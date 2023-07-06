@@ -49,7 +49,7 @@ const playerSelectMenu = (playerNumber) => {
 
     let element = document.createElement("div");
     element.classList.add("playerIcon");
-    if (gameState.chosenIcons.includes(heroName) || i == 5) {
+    if (gameState.chosenIcons.includes(heroName)) {
       element.classList.add("playerIconChosen");
     }
     element.id = `playerSelectIcon${heroName.replace(" ", "")}`;
@@ -88,6 +88,7 @@ const setPlayerSelections = (playerNumber, selectedIcon) => {
   }
   
   let iconName = document.getElementById("playerIconSelected").textContent;
+  gameState.chosenIcons.push(iconName);
 
   let i = heroNames.findIndex((hero) => {
     return hero === iconName;
