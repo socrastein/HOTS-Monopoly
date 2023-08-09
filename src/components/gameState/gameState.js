@@ -1,12 +1,12 @@
 const gameState = {
   numberOfPlayers: 2,
-  chosenIcons: [],
   numberOfAI: 0,
   isSpeedGame: false,
   isFreeParkingBonus: false,
   isHousingLimited: true,
   isUnsoldPropertyAuctioned: false,
-
+  
+  chosenIcons: [],
   player1: undefined,
   player2: undefined,
   player3: undefined,
