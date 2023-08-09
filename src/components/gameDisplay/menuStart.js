@@ -2,7 +2,7 @@ import HOTSLogo from "../HOTSLogo.jpg";
 
 import cardFactory from "./cardFactory";
 import gameState from "../gameState/gameState";
-import startGame from "../gameState/gameStart"; 
+import startGame from "../gameState/gameStart";
 import playerSelectMenu from "./menuPlayerSelect";
 
 const toggleGameState = (option) => {
@@ -45,6 +45,7 @@ const displayNewGameMenu = () => {
   //  Free Parking : Just Parking, Bonus Pot
   //  Housing Supply : Limited, Unlimited
   //  Auction Unsold Property : Yes, No
+  
   console.log("New Game");
   const mainContainer = document.getElementById("mainContainer");
   mainContainer.innerHTML = "";
@@ -52,8 +53,12 @@ const displayNewGameMenu = () => {
   const menu = cardFactory.container("newMenu");
 
   const title = cardFactory.title("New Game");
+
   const players = cardFactory.labelDropPair("Players", [1, 2, 3, 4], 1);
-  const AI = cardFactory.labelDropPair("AI", ["None", 1, 2], 0);
+  const playersValue = players.getElementsByTagName("select")[0];
+
+  const AI = cardFactory.labelDropPair("AI", [0, 1, 2], 0);
+  const AIValue = AI.getElementsByTagName("select")[0];
 
   const speed = cardFactory.labelTogglePair(
     "Fast Game",
@@ -75,9 +80,15 @@ const displayNewGameMenu = () => {
     "Auction Passed Recruits",
     () => toggleGameState("isUnsoldPropertyAuctioned"),
     false
-  )
+  );
 
-  const start = cardFactory.button("START", () => playerSelectMenu(1));
+  const start = cardFactory.button("START", () => {
+    gameState.numberOfPlayers = Number(playersValue.value);
+    gameState.numberOfAI = Number(AIValue.value);
+    console.log(gameState.numberOfPlayers);
+    console.log(gameState.numberOfAI);
+    playerSelectMenu(1);
+  });
 
   mainContainer.appendChild(menu);
   menu.appendChild(cardFactory.backButton(displayMainMenu));
